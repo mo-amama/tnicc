@@ -1,4 +1,6 @@
 const Download = require('../model/Download');
+const Language = require('../model/Language');
+const Translation = require('../model/Translation');
 
 module.exports = {
     getAll,
@@ -17,8 +19,23 @@ async function getById(id) {
 }
 
 async function create( downloadParam) {
-     const  download = new  Download( downloadParam);
-    return await  download.save();
+    let response = {year:true,month:false,url:''};
+     const  download = new  Download(downloadParam);
+     let lang = await  Language.findById(downloadParam.language);
+     const trans = await  Translation.find();
+     download.language = lang.name;
+    
+     for(var i = 0; i < trans.length; i++){
+          if(trans[i].year == download.year){
+            response.year = true
+            if(trans[i].month == download.month){
+                response.month = true
+                response.url = trans[i].dataURL
+             }
+         } 
+     }
+    await  download.save();
+    return response;
 }
 
 async function update(id,  downloadParam) {

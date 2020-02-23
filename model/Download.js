@@ -7,13 +7,25 @@ const downloadSchema = mongoose.Schema({
      email: {
          type: String
      },
-     language: {
+     phoneNumber: {
+        type: String
+    },
+    countryCode: {
+        type: String
+    },
+    country: {
+        type: String
+    },
+    language: {
          type: String
      },
      translation: {
         type: String
     },
-    country: {
+    month: {
+        type: String
+    },
+    year: {
         type: String
     },
      dateCreated:{

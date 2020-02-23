@@ -4,9 +4,12 @@ const translationSchema = mongoose.Schema({
     language: {
          type: String
      },
-     descritpion: {
+     month: {
          type: String
      },
+     year: {
+        type: String
+    },
      docType: {
          type: String
      },

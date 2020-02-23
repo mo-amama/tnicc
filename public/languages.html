@@ -12,13 +12,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
         <title>Dashboard</title>
 
-        <!-- STYLESHEETS -->
-        <style type="text/css">
-            [fuse-cloak],
-            .fuse-cloak {
-                display: none !important;
-            }
-        </style>
 
         <!-- Icons.css -->
         <link type="text/css" rel="stylesheet" href="/public/assets/icons/fuse-icon-font/style.css">
@@ -42,43 +35,17 @@
         <link type="text/css" rel="stylesheet" href="/public/assets/css/main.css">
         <!-- / STYLESHEETS -->
 
-        <!-- JAVASCRIPT -->
-
-        <!-- jQuery -->
-        <script type="text/javascript" src="/public/assets/vendor/jquery/dist/jquery.min.js"></script>
-
-        <!-- Mobile Detect -->
-        <script type="text/javascript" src="/public/assets/vendor/mobile-detect/mobile-detect.min.js"></script>
-
-        <!-- Perfect Scrollbar -->
-        <script type="text/javascript"
-                src="/public/assets/vendor/perfect-scrollbar/js/perfect-scrollbar.jquery.min.js"></script>
-
-        <!-- Popper.js -->
-        <script type="text/javascript" src="/public/assets/vendor/popper.js/index.js"></script>
-
-        <!-- Bootstrap -->
-        <script type="text/javascript" src="/public/assets/vendor/bootstrap/bootstrap.min.js"></script>
-
-        <!-- Nvd3 - D3 Charts -->
-        <script type="text/javascript" src="/public/assets/vendor/d3/d3.min.js"></script>
-        <script type="text/javascript" src="/public/assets/vendor/nvd3/build/nv.d3.min.js"></script>
-
-        <!-- Data tables -->
-        <script type="text/javascript" src="/public/assets/vendor/datatables.net/js/jquery.dataTables.min.js"></script>
-
-        <script type="text/javascript" src="/public/assets/vendor/datatables-responsive/js/dataTables.responsive.js"></script>
-
-        <!-- PNotify -->
-        <script type="text/javascript" src="/public/assets/vendor/pnotify/pnotify.custom.min.js"></script>
-
-        <!-- Fuse Html -->
-        <script type="text/javascript" src="/public/assets/vendor/fuse-html/fuse-html.min.js"></script>
-
-        <!-- Main JS -->
-        <script type="text/javascript" src="/public/assets/js/main.js"></script>
-
         <!-- / JAVASCRIPT -->
+        <!-- STYLESHEETS -->
+        <style type="text/css">
+            [fuse-cloak],
+            .fuse-cloak {
+                display: none !important;
+            }
+            .error{color:red}
+        </style>
+
+
     </head>
 
     <body class="layout layout-vertical layout-left-navigation layout-below-toolbar">
@@ -88,9 +55,7 @@
 
 <div id="wrapper">
 
-
-
-<aside id="aside" class="aside aside-left"
+    <aside id="aside" class="aside aside-left"
     data-fuse-bar="aside" data-fuse-bar-media-step="md"
     data-fuse-bar-position="left">
  <div class="aside-content-wrapper">
@@ -117,7 +82,7 @@
 <a class="nav-link ripple "
 data-toggle="collapse"
 data-target="#collapse-dashboards"
-href="#"
+href="/admin/dashboard"
 aria-expanded="true"
 aria-controls="collapse-dashboards">
 <i class="icon s-4 icon-tile-four"></i>
@@ -138,7 +103,7 @@ data-page-url="/apps-dashboards-project.html">
 <a class="nav-link ripple"
 data-toggle="collapse"
 data-target="#collapse-ecommerce"
-href="/admin/languages"
+href="#"
 aria-expanded="false"
 aria-controls="collapse-ecommerce">
 <i class="icon s-4 icon-comment"></i>
@@ -341,7 +306,7 @@ data-page-url="/apps-dashboards-project.html">
             <div class="row no-gutters align-items-start justify-content-between flex-nowrap">
 
                 <div>
-                    <span class="h2">Welcome back, Super Admin!</span>
+                    <span class="h2">Rhapsody of Realities Translations</span>
                 </div>
 
                 <button type="button" class="sidebar-toggle-button btn btn-icon d-block d-xl-none"
@@ -354,165 +319,41 @@ data-page-url="/apps-dashboards-project.html">
         <!-- / HEADER -->
 
         <!-- CONTENT -->
-        <div class="page-content">
+        <div class="page-content pl-14">
 
-            <ul class="nav nav-tabs" id="myTab" role="tablist">
-
-                <li class="nav-item">
-                    <a class="nav-link btn active" id="home-tab" data-toggle="tab" href="#home-tab-pane" role="tab"
-                       aria-controls="home-tab-pane" aria-expanded="true">Home</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link btn" id="budget-summary-tab" data-toggle="tab" href="#budget-summary-tab-pane"
-                       role="tab" aria-controls="budget-summary-tab-pane">Budget Summary</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link btn" id="team-members-tab" data-toggle="tab" href="#team-members-tab-pane"
-                       role="tab" aria-controls="team-members-tab-pane">Team Members</a>
-                </li>
-            </ul>
-
+    
             <div class="tab-content">
-                <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab">
-
-    <!-- WIDGET GROUP -->
-    <div class="widget-group row">
-
-        <!-- WIDGET 1 -->
-        <div class="col-12 col-sm-6 col-xl-3 p-3">
-
-            <div class="widget widget1 card">
-
-                <div class="widget-header pl-4 pr-2 row no-gutters align-items-center justify-content-between">
-
-                    <div class="col">
-
-                        <select class="h6 custom-select">
-                            <option selected="" value="today">Today</option>
-                            <option value="yesterday">Yesterday</option>
-                            <option value="tomorrow">Tomorrow</option>
-                        </select>
-
-                    </div>
-
-                    <button type="button" class="btn btn-icon">
-                        <i class="icon icon-dots-vertical"></i>
-                    </button>
-
-                </div>
-
-                <div class="widget-content pt-2 pb-8 d-flex flex-column align-items-center justify-content-center">
-
-                    <div class="title text-secondary">25</div>
-
-                    <div class="sub-title h6 text-muted">DUE TASKS</div>
-
-                </div>
-
-                <div class="widget-footer p-4 bg-light row no-gutters align-items-center">
-
-                    <span class="text-muted">Completed:</span>
-
-                    <span class="ml-2">7</span>
-
-                </div>
-            </div>
-        </div>
-        <!-- / WIDGET 1 -->
-
-        <!-- WIDGET 2 -->
-        <div class="col-12 col-sm-6 col-xl-3 p-3">
-
-            <div class="widget widget2 card">
-
-                <div class="widget-header pl-4 pr-2 row no-gutters align-items-center justify-content-between">
-
-                    <div class="col">
-                        <span class="h6">Overdue</span>
-                    </div>
-
-                    <button type="button" class="btn btn-icon">
-                        <i class="icon icon-dots-vertical"></i>
-                    </button>
-                </div>
-
-                <div class="widget-content pt-2 pb-8 d-flex flex-column align-items-center justify-content-center">
-                    <div class="title text-danger">4</div>
-                    <div class="sub-title h6 text-muted">TASKS</div>
-                </div>
-
-                <div class="widget-footer p-4 bg-light row no-gutters align-items-center">
-                    <span class="text-muted">Yesterday's:</span>
-                    <span class="ml-2">2</span>
-                </div>
-            </div>
-        </div>
-        <!-- / WIDGET 2 -->
-
-        <!-- WIDGET 3 -->
-        <div class="col-12 col-sm-6 col-xl-3 p-3">
-
-            <div class="widget widget3 card">
-
-                <div class="widget-header pl-4 pr-2 row no-gutters align-items-center justify-content-between">
-
-                    <div class="col">
-                        <span class="h6">Issues</span>
-                    </div>
-
-                    <button type="button" class="btn btn-icon">
-                        <i class="icon icon-dots-vertical"></i>
-                    </button>
-
-                </div>
-
-                <div class="widget-content pt-2 pb-8 d-flex flex-column align-items-center justify-content-center">
-                    <div class="title text-warning">32</div>
-                    <div class="sub-title h6 text-muted">OPEN</div>
-                </div>
-
-                <div class="widget-footer p-4 bg-light row no-gutters align-items-center">
-                    <span class="text-muted">Closed today:</span>
-                    <span class="ml-2">0</span>
-                </div>
-            </div>
-        </div>
-        <!-- / WIDGET 3 -->
-
+   
         <!-- WIDGET 4 -->
-        <div class="col-12 col-sm-6 col-xl-3 p-3">
+        <div class="col-lg-12 col-sm-12">
 
             <div class="widget widget4 card">
 
-                <div class="widget-header pl-4 pr-2 row no-gutters align-items-center justify-content-between">
+                    <form class="p-14">
+                        <h2 class="mt-0 ml-50 pl-17 p-5 text-secondary">Add Language</h2>
 
-                    <div class="col">
-                        <span class="h6">Features</span>
+                        <div class="form-group">
+                       <input type="text" class="form-control" placeholder="Language Name" id="language">
+                         <label class="form-control-label" for="formGroupExampleInput">Add Language</label>
+                            <span class="error" id="language_error"></span>
+                        </div>
+                         <div class="form-group">
+                            <select class="form-control custom-select" id="country">
+                                <option selected value="" id="year">Select Country</option>
+                                <option value="Nigeria">Nigeria</option>
+                                <option value="South Africa">South Africa</option>
+                                <option value="Ghana">Ghana</option>
+                             </select>
+                             <span class="error" id="country_error"></span>
+
+                         </div>
+                          <div class="form-group px-32">
+                          <button type="button" class="btn btn-secondary  ml-48 px-20 " id="submitBtn">Add Language</button>
+                      </form>
                     </div>
 
-                    <button type="button" class="btn btn-icon">
-                        <i class="icon icon-dots-vertical"></i>
-                    </button>
-
-                </div>
-
-                <div class="widget-content pt-2 pb-8 d-flex flex-column align-items-center justify-content-center">
-                    <div class="title text-info">42</div>
-                    <div class="sub-title h6 text-muted">PROPOSALS</div>
-                </div>
-
-                <div class="widget-footer p-4 bg-light row no-gutters align-items-center">
-                    <span class="text-muted">Implemented:</span>
-                    <span class="ml-2">8</span>
-                </div>
             </div>
         </div>
-        <!-- / WIDGET 4 -->
-
-           </div>
-    <!-- / WIDGET GROUP -->
 </div>
  
 
@@ -528,5 +369,94 @@ data-page-url="/apps-dashboards-project.html">
     </div>
 
 </div>
+
+        <!-- JAVASCRIPT -->
+
+        <!-- jQuery -->
+        <script type="text/javascript" src="/public/assets/js/jquery.min.js"></script>
+
+        <!-- Mobile Detect -->
+        <script type="text/javascript" src="/public/assets/vendor/mobile-detect/mobile-detect.min.js"></script>
+
+        <!-- Perfect Scrollbar -->
+        <script type="text/javascript"
+                src="/public/assets/vendor/perfect-scrollbar/js/perfect-scrollbar.jquery.min.js"></script>
+
+        <!-- Popper.js -->
+        <script type="text/javascript" src="/public/assets/vendor/popper.js/index.js"></script>
+
+        <!-- Bootstrap -->
+        <script type="text/javascript" src="/public/assets/vendor/bootstrap/bootstrap.min.js"></script>
+
+        <!-- Nvd3 - D3 Charts -->
+        <script type="text/javascript" src="/public/assets/vendor/d3/d3.min.js"></script>
+        <script type="text/javascript" src="/public/assets/vendor/nvd3/build/nv.d3.min.js"></script>
+
+        <!-- Data tables -->
+        <script type="text/javascript" src="/public/assets/vendor/datatables.net/js/jquery.dataTables.min.js"></script>
+
+        <script type="text/javascript" src="/public/assets/vendor/datatables-responsive/js/dataTables.responsive.js"></script>
+
+        <!-- PNotify -->
+        <script type="text/javascript" src="/public/assets/vendor/pnotify/pnotify.custom.min.js"></script>
+
+        <!-- Fuse Html -->
+        <script type="text/javascript" src="/public/assets/vendor/fuse-html/fuse-html.min.js"></script>
+
+        <!-- Main JS -->
+        <script type="text/javascript" src="/public/assets/js/main.js"></script>
+        <script type="text/javascript" src="/public/assets/js/custom/Languages.js"></script>
+
+
+<script>
+$(document).ready(function(){  
+
+  $('#submitBtn').on('click',function(){
+
+
+    var language =  document.getElementById('language').value;
+    var country =  document.getElementById('country').value;
+
+
+    document.getElementById('language_error').innerHTML = "";
+    document.getElementById('country_error').innerHTML = "";
+    
+    if(language == ''){
+      document.getElementById('language_error').innerHTML = "required";
+      document.getElementById('language').focus();
+      return false;
+    }else if(country == ''){
+      document.getElementById('country_error').innerHTML = "required";
+      document.getElementById('country').focus();
+      return false;
+    }
+    let languageDetails = {
+        name: language,
+        country: country
+    }
+    Languages.createLanguage('/dept/admin/tni/language/create',languageDetails).then(function(response){
+
+        console.log("languageDetails",response);
+      }).catch(function(error){
+        console.log('error',error);
+      }); 
+  });
+
+});
+function create_UUID(){
+            var dt = new Date().getTime();
+            var uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+                var r = (dt + Math.random()*16)%16 | 0;
+                dt = Math.floor(dt/16);
+                return (c=='x' ? r :(r&0x3|0x8)).toString(16);
+            });
+            return uuid;
+    }
+    function selectFileName(input) {
+        if (input.files && input.files[0]) {
+            $("#filename").text(input.files[0].name);
+        }
+    }
+</script>
 </body>
 </html>

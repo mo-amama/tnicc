@@ -67,6 +67,18 @@ router.get("/",function(req,res){
   router.get("/admin/dashboard",function(req,res){
     res.sendFile(path + "dashboard.html");
   });
+  router.get("/admin/languages",function(req,res){
+    res.sendFile(path + "languages.html");
+  });
+  router.get("/admin/distributors",function(req,res){
+    res.sendFile(path + "dashboard-distributors.html");
+  });
+  router.get("/admin/team",function(req,res){
+    res.sendFile(path + "dashboard-team.html");
+  });
+  router.get("/admin/translations",function(req,res){
+    res.sendFile(path + "translations.html");
+  });
   router.get("/pwdreset",function(req,res){
     res.sendFile(path + "auth-reset.html");
   });
@@ -79,6 +91,7 @@ router.get("/",function(req,res){
   app.use('/dept/admin/tni/language', require('./route/Language')); 
   app.use('/dept/admin/tni/download', require('./route/Download')); 
   app.use('/dept/admin/tni/translation', require('./route/Translation')); 
+  app.use('/firebase', require('./route/Config')); 
  //mapping for frontend views
 
 app.listen(port,() => {

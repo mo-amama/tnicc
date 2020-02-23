@@ -88,9 +88,9 @@
 
 <div id="wrapper">
 
+    
 
-
-<aside id="aside" class="aside aside-left"
+    <aside id="aside" class="aside aside-left"
     data-fuse-bar="aside" data-fuse-bar-media-step="md"
     data-fuse-bar-position="left">
  <div class="aside-content-wrapper">
@@ -117,7 +117,7 @@
 <a class="nav-link ripple "
 data-toggle="collapse"
 data-target="#collapse-dashboards"
-href="#"
+href="/admin/dashboard"
 aria-expanded="true"
 aria-controls="collapse-dashboards">
 <i class="icon s-4 icon-tile-four"></i>
@@ -126,7 +126,7 @@ aria-controls="collapse-dashboards">
 </ul>
 </li>
 <li class="nav-item">
-<a class="nav-link ripple " href="/admin/team"
+<a class="nav-link ripple " href="#"
 data-page-url="/apps-dashboards-project.html">
 <i class="icon s-4 icon-calendar-today"></i>
 <span>Manage Teams</span>
@@ -186,8 +186,6 @@ data-page-url="/apps-dashboards-project.html">
 </div>
 </div>
 </aside>
-
-
 
 
     <div class="content-wrapper">
@@ -329,201 +327,62 @@ data-page-url="/apps-dashboards-project.html">
     </div>
 </nav>
         
+<div class="content">
+    <div class="page-layout carded full-width">
 
-        <div class="content">
-            <div id="project-dashboard" class="page-layout simple right-sidebar tabbed">
+<div class="top-bg bg-secondary"></div>
 
-    <div class="page-content-wrapper">
+<!-- CONTENT -->
+<div class="page-content">
 
-        <!-- HEADER -->
-        <div class="page-header bg-secondary text-auto d-flex flex-column justify-content-between px-6 pt-4 pb-0">
-
-            <div class="row no-gutters align-items-start justify-content-between flex-nowrap">
-
-                <div>
-                    <span class="h2">Welcome back, Super Admin!</span>
-                </div>
-
-                <button type="button" class="sidebar-toggle-button btn btn-icon d-block d-xl-none"
-                        data-fuse-bar-toggle="dashboard-project-sidebar" aria-label="Toggle sidebar">
-                    <i class="icon icon-menu"></i>
-                </button>
-            </div>
-
-        </div>
-        <!-- / HEADER -->
-
-        <!-- CONTENT -->
-        <div class="page-content">
-
-            <ul class="nav nav-tabs" id="myTab" role="tablist">
-
-                <li class="nav-item">
-                    <a class="nav-link btn active" id="home-tab" data-toggle="tab" href="#home-tab-pane" role="tab"
-                       aria-controls="home-tab-pane" aria-expanded="true">Home</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link btn" id="budget-summary-tab" data-toggle="tab" href="#budget-summary-tab-pane"
-                       role="tab" aria-controls="budget-summary-tab-pane">Budget Summary</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link btn" id="team-members-tab" data-toggle="tab" href="#team-members-tab-pane"
-                       role="tab" aria-controls="team-members-tab-pane">Team Members</a>
-                </li>
-            </ul>
-
-            <div class="tab-content">
-                <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab">
-
-    <!-- WIDGET GROUP -->
-    <div class="widget-group row">
-
-        <!-- WIDGET 1 -->
-        <div class="col-12 col-sm-6 col-xl-3 p-3">
-
-            <div class="widget widget1 card">
-
-                <div class="widget-header pl-4 pr-2 row no-gutters align-items-center justify-content-between">
-
-                    <div class="col">
-
-                        <select class="h6 custom-select">
-                            <option selected="" value="today">Today</option>
-                            <option value="yesterday">Yesterday</option>
-                            <option value="tomorrow">Tomorrow</option>
-                        </select>
-
-                    </div>
-
-                    <button type="button" class="btn btn-icon">
-                        <i class="icon icon-dots-vertical"></i>
-                    </button>
-
-                </div>
-
-                <div class="widget-content pt-2 pb-8 d-flex flex-column align-items-center justify-content-center">
-
-                    <div class="title text-secondary">25</div>
-
-                    <div class="sub-title h6 text-muted">DUE TASKS</div>
-
-                </div>
-
-                <div class="widget-footer p-4 bg-light row no-gutters align-items-center">
-
-                    <span class="text-muted">Completed:</span>
-
-                    <span class="ml-2">7</span>
-
-                </div>
-            </div>
-        </div>
-        <!-- / WIDGET 1 -->
-
-        <!-- WIDGET 2 -->
-        <div class="col-12 col-sm-6 col-xl-3 p-3">
-
-            <div class="widget widget2 card">
-
-                <div class="widget-header pl-4 pr-2 row no-gutters align-items-center justify-content-between">
-
-                    <div class="col">
-                        <span class="h6">Overdue</span>
-                    </div>
-
-                    <button type="button" class="btn btn-icon">
-                        <i class="icon icon-dots-vertical"></i>
-                    </button>
-                </div>
-
-                <div class="widget-content pt-2 pb-8 d-flex flex-column align-items-center justify-content-center">
-                    <div class="title text-danger">4</div>
-                    <div class="sub-title h6 text-muted">TASKS</div>
-                </div>
-
-                <div class="widget-footer p-4 bg-light row no-gutters align-items-center">
-                    <span class="text-muted">Yesterday's:</span>
-                    <span class="ml-2">2</span>
-                </div>
-            </div>
-        </div>
-        <!-- / WIDGET 2 -->
-
-        <!-- WIDGET 3 -->
-        <div class="col-12 col-sm-6 col-xl-3 p-3">
-
-            <div class="widget widget3 card">
-
-                <div class="widget-header pl-4 pr-2 row no-gutters align-items-center justify-content-between">
-
-                    <div class="col">
-                        <span class="h6">Issues</span>
-                    </div>
-
-                    <button type="button" class="btn btn-icon">
-                        <i class="icon icon-dots-vertical"></i>
-                    </button>
-
-                </div>
-
-                <div class="widget-content pt-2 pb-8 d-flex flex-column align-items-center justify-content-center">
-                    <div class="title text-warning">32</div>
-                    <div class="sub-title h6 text-muted">OPEN</div>
-                </div>
-
-                <div class="widget-footer p-4 bg-light row no-gutters align-items-center">
-                    <span class="text-muted">Closed today:</span>
-                    <span class="ml-2">0</span>
-                </div>
-            </div>
-        </div>
-        <!-- / WIDGET 3 -->
-
-        <!-- WIDGET 4 -->
-        <div class="col-12 col-sm-6 col-xl-3 p-3">
-
-            <div class="widget widget4 card">
-
-                <div class="widget-header pl-4 pr-2 row no-gutters align-items-center justify-content-between">
-
-                    <div class="col">
-                        <span class="h6">Features</span>
-                    </div>
-
-                    <button type="button" class="btn btn-icon">
-                        <i class="icon icon-dots-vertical"></i>
-                    </button>
-
-                </div>
-
-                <div class="widget-content pt-2 pb-8 d-flex flex-column align-items-center justify-content-center">
-                    <div class="title text-info">42</div>
-                    <div class="sub-title h6 text-muted">PROPOSALS</div>
-                </div>
-
-                <div class="widget-footer p-4 bg-light row no-gutters align-items-center">
-                    <span class="text-muted">Implemented:</span>
-                    <span class="ml-2">8</span>
-                </div>
-            </div>
-        </div>
-        <!-- / WIDGET 4 -->
-
-           </div>
-    <!-- / WIDGET GROUP -->
+<!-- HEADER -->
+<div class="header py-6 bg-secondary text-white">
+    <span class="h3">Create Teams</span>
 </div>
- 
+<!-- / HEADER -->
 
-           </div>
-    <!-- / WIDGET GROUP -->
+<div class="page-content-card">
+    <!-- CONTENT TOOLBAR -->
+    <div class="toolbar p-6">Fill out this form to create a Team</div>
+    <!-- / CONTENT TOOLBAR -->
+
+    <div class="p-6">
+        <!-- DEMO CONTENT -->
+        <div class="demo-content">
+
+            <form class="pb-0">
+                <div class="row pt-0 p-6">
+                    <div class="col">
+                        <input type="text" class="form-control" placeholder="Team Name">
+                    </div>
+                    <div class="col">
+                        <input type="text" class="form-control" placeholder="Team Leader's Name">
+                    </div>
+                </div>
+                <div class="row p-6">
+                    <div class="col">
+                        <input type="email" class="form-control email" placeholder="Team Leader's Email">
+                    </div>
+                    <div class="col">
+                        <input type="number" class="form-control phone" placeholder="Team Leader's Phone number">
+                    </div>
+                </div>
+                <div class="row">
+                        <button class="btn btn-secondary" style="position: relative; margin-left:400px;" type="submit">Create Team</button>
+                </div>
+            </form>
+
 </div>
-         </div>
-</div>
-</div>
+        <!-- / DEMO CONTENT -->
     </div>
-        <!-- / CONTENT -->
+
+</div>
+</div>
+<!-- / CONTENT -->
+</div>
+</div>
+
+
     </div>    
     </div>
 

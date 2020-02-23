@@ -5,9 +5,6 @@ const languageSchema = mongoose.Schema({
      name: {
          type: String
      },
-     center: {
-         type: String
-     },
      country: {
          type: String
      },

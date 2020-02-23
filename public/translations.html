@@ -39,44 +39,8 @@
         <link type="text/css" rel="stylesheet" href="/public/assets/vendor/fuse-html/fuse-html.min.css"/>
 
         <!-- Main CSS -->
-        <link type="text/css" rel="stylesheet" href="/public/assets/css/main.css">
         <!-- / STYLESHEETS -->
-
-        <!-- JAVASCRIPT -->
-
-        <!-- jQuery -->
-        <script type="text/javascript" src="/public/assets/vendor/jquery/dist/jquery.min.js"></script>
-
-        <!-- Mobile Detect -->
-        <script type="text/javascript" src="/public/assets/vendor/mobile-detect/mobile-detect.min.js"></script>
-
-        <!-- Perfect Scrollbar -->
-        <script type="text/javascript"
-                src="/public/assets/vendor/perfect-scrollbar/js/perfect-scrollbar.jquery.min.js"></script>
-
-        <!-- Popper.js -->
-        <script type="text/javascript" src="/public/assets/vendor/popper.js/index.js"></script>
-
-        <!-- Bootstrap -->
-        <script type="text/javascript" src="/public/assets/vendor/bootstrap/bootstrap.min.js"></script>
-
-        <!-- Nvd3 - D3 Charts -->
-        <script type="text/javascript" src="/public/assets/vendor/d3/d3.min.js"></script>
-        <script type="text/javascript" src="/public/assets/vendor/nvd3/build/nv.d3.min.js"></script>
-
-        <!-- Data tables -->
-        <script type="text/javascript" src="/public/assets/vendor/datatables.net/js/jquery.dataTables.min.js"></script>
-
-        <script type="text/javascript" src="/public/assets/vendor/datatables-responsive/js/dataTables.responsive.js"></script>
-
-        <!-- PNotify -->
-        <script type="text/javascript" src="/public/assets/vendor/pnotify/pnotify.custom.min.js"></script>
-
-        <!-- Fuse Html -->
-        <script type="text/javascript" src="/public/assets/vendor/fuse-html/fuse-html.min.js"></script>
-
-        <!-- Main JS -->
-        <script type="text/javascript" src="/public/assets/js/main.js"></script>
+        <link type="text/css" rel="stylesheet" href="/public/assets/css/main.css">
 
         <!-- / JAVASCRIPT -->
     </head>
@@ -88,9 +52,9 @@
 
 <div id="wrapper">
 
+    
 
-
-<aside id="aside" class="aside aside-left"
+    <aside id="aside" class="aside aside-left"
     data-fuse-bar="aside" data-fuse-bar-media-step="md"
     data-fuse-bar-position="left">
  <div class="aside-content-wrapper">
@@ -117,7 +81,7 @@
 <a class="nav-link ripple "
 data-toggle="collapse"
 data-target="#collapse-dashboards"
-href="#"
+href="/admin/dashboard"
 aria-expanded="true"
 aria-controls="collapse-dashboards">
 <i class="icon s-4 icon-tile-four"></i>
@@ -151,7 +115,7 @@ aria-controls="collapse-ecommerce">
 <a class="nav-link ripple"
 data-toggle="collapse"
 data-target="#collapse-ecommerce"
-href="/admin/translations"
+href="#"
 aria-expanded="false"
 aria-controls="collapse-ecommerce">
 <i class="icon s-4 icon-comment"></i>
@@ -186,7 +150,6 @@ data-page-url="/apps-dashboards-project.html">
 </div>
 </div>
 </aside>
-
 
 
 
@@ -341,7 +304,7 @@ data-page-url="/apps-dashboards-project.html">
             <div class="row no-gutters align-items-start justify-content-between flex-nowrap">
 
                 <div>
-                    <span class="h2">Welcome back, Super Admin!</span>
+                    <span class="h2">Rhapsody of Realities Translations</span>
                 </div>
 
                 <button type="button" class="sidebar-toggle-button btn btn-icon d-block d-xl-none"
@@ -354,165 +317,55 @@ data-page-url="/apps-dashboards-project.html">
         <!-- / HEADER -->
 
         <!-- CONTENT -->
-        <div class="page-content">
+        <div class="page-content pl-14">
 
-            <ul class="nav nav-tabs" id="myTab" role="tablist">
-
-                <li class="nav-item">
-                    <a class="nav-link btn active" id="home-tab" data-toggle="tab" href="#home-tab-pane" role="tab"
-                       aria-controls="home-tab-pane" aria-expanded="true">Home</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link btn" id="budget-summary-tab" data-toggle="tab" href="#budget-summary-tab-pane"
-                       role="tab" aria-controls="budget-summary-tab-pane">Budget Summary</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link btn" id="team-members-tab" data-toggle="tab" href="#team-members-tab-pane"
-                       role="tab" aria-controls="team-members-tab-pane">Team Members</a>
-                </li>
-            </ul>
-
+    
             <div class="tab-content">
-                <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab">
-
-    <!-- WIDGET GROUP -->
-    <div class="widget-group row">
-
-        <!-- WIDGET 1 -->
-        <div class="col-12 col-sm-6 col-xl-3 p-3">
-
-            <div class="widget widget1 card">
-
-                <div class="widget-header pl-4 pr-2 row no-gutters align-items-center justify-content-between">
-
-                    <div class="col">
-
-                        <select class="h6 custom-select">
-                            <option selected="" value="today">Today</option>
-                            <option value="yesterday">Yesterday</option>
-                            <option value="tomorrow">Tomorrow</option>
-                        </select>
-
-                    </div>
-
-                    <button type="button" class="btn btn-icon">
-                        <i class="icon icon-dots-vertical"></i>
-                    </button>
-
-                </div>
-
-                <div class="widget-content pt-2 pb-8 d-flex flex-column align-items-center justify-content-center">
-
-                    <div class="title text-secondary">25</div>
-
-                    <div class="sub-title h6 text-muted">DUE TASKS</div>
-
-                </div>
-
-                <div class="widget-footer p-4 bg-light row no-gutters align-items-center">
-
-                    <span class="text-muted">Completed:</span>
-
-                    <span class="ml-2">7</span>
-
-                </div>
-            </div>
-        </div>
-        <!-- / WIDGET 1 -->
-
-        <!-- WIDGET 2 -->
-        <div class="col-12 col-sm-6 col-xl-3 p-3">
-
-            <div class="widget widget2 card">
-
-                <div class="widget-header pl-4 pr-2 row no-gutters align-items-center justify-content-between">
-
-                    <div class="col">
-                        <span class="h6">Overdue</span>
-                    </div>
-
-                    <button type="button" class="btn btn-icon">
-                        <i class="icon icon-dots-vertical"></i>
-                    </button>
-                </div>
-
-                <div class="widget-content pt-2 pb-8 d-flex flex-column align-items-center justify-content-center">
-                    <div class="title text-danger">4</div>
-                    <div class="sub-title h6 text-muted">TASKS</div>
-                </div>
-
-                <div class="widget-footer p-4 bg-light row no-gutters align-items-center">
-                    <span class="text-muted">Yesterday's:</span>
-                    <span class="ml-2">2</span>
-                </div>
-            </div>
-        </div>
-        <!-- / WIDGET 2 -->
-
-        <!-- WIDGET 3 -->
-        <div class="col-12 col-sm-6 col-xl-3 p-3">
-
-            <div class="widget widget3 card">
-
-                <div class="widget-header pl-4 pr-2 row no-gutters align-items-center justify-content-between">
-
-                    <div class="col">
-                        <span class="h6">Issues</span>
-                    </div>
-
-                    <button type="button" class="btn btn-icon">
-                        <i class="icon icon-dots-vertical"></i>
-                    </button>
-
-                </div>
-
-                <div class="widget-content pt-2 pb-8 d-flex flex-column align-items-center justify-content-center">
-                    <div class="title text-warning">32</div>
-                    <div class="sub-title h6 text-muted">OPEN</div>
-                </div>
-
-                <div class="widget-footer p-4 bg-light row no-gutters align-items-center">
-                    <span class="text-muted">Closed today:</span>
-                    <span class="ml-2">0</span>
-                </div>
-            </div>
-        </div>
-        <!-- / WIDGET 3 -->
-
+   
         <!-- WIDGET 4 -->
-        <div class="col-12 col-sm-6 col-xl-3 p-3">
+        <div class="col-lg-12 col-sm-12">
 
             <div class="widget widget4 card">
 
-                <div class="widget-header pl-4 pr-2 row no-gutters align-items-center justify-content-between">
+                    <form class="p-14">
+                        <div class="form-group">
+                      
+                            <h2 class="mt-0 ml-50 pl-17 p-5 text-secondary">Upload Translations</h2>
+                       
+                            <select class="form-control custom-select" id="language">
+                                <option selected value="">Select Language</option>
+                             </select>
+                        </div>
+                         <div class="form-group">
+                            <select class="form-control custom-select"  id="month">
+                                <option selected value="">Select Month</option>
+                                <option value="Febraury">February</option>
+                                <option value="March">March</option>
+                                <option value="April">April</option>
+                             </select>
+                         </div>
+                         <div class="form-group">
+                            <input type="number" class="form-control" id="year" placeholder="Year">
+                         </div>
+                         <div class="form-group">
+                            <select class="form-control custom-select" id="docType">
+                                <option selected value="">Select Document Type</option>
+                                <option value="MP3">MP3</option>
+                                <option value="PDF">PDF</option>
+                             </select>
+                         </div>
 
-                    <div class="col">
-                        <span class="h6">Features</span>
+                         <div class="form-group">
+                            <label for="exampleFormControlFile1">Upload</label>
+                            <input type="file" class="form-control-file" id="rorDocs">
+                          </div>
+                          <div class="form-group px-32">
+                          <button type="button" class="btn btn-secondary  ml-48 px-20 " id="submitBtn">Submit</button>
+                      </form>
                     </div>
 
-                    <button type="button" class="btn btn-icon">
-                        <i class="icon icon-dots-vertical"></i>
-                    </button>
-
-                </div>
-
-                <div class="widget-content pt-2 pb-8 d-flex flex-column align-items-center justify-content-center">
-                    <div class="title text-info">42</div>
-                    <div class="sub-title h6 text-muted">PROPOSALS</div>
-                </div>
-
-                <div class="widget-footer p-4 bg-light row no-gutters align-items-center">
-                    <span class="text-muted">Implemented:</span>
-                    <span class="ml-2">8</span>
-                </div>
             </div>
         </div>
-        <!-- / WIDGET 4 -->
-
-           </div>
-    <!-- / WIDGET GROUP -->
 </div>
  
 
@@ -528,5 +381,146 @@ data-page-url="/apps-dashboards-project.html">
     </div>
 
 </div>
+
+        <!-- JAVASCRIPT -->
+
+        <!-- jQuery -->
+        <script type="text/javascript" src="/public/assets/js/jquery.min.js"></script>
+
+        <!-- Mobile Detect -->
+        <script type="text/javascript" src="/public/assets/vendor/mobile-detect/mobile-detect.min.js"></script>
+
+        <!-- Perfect Scrollbar -->
+        <script type="text/javascript"
+                src="/public/assets/vendor/perfect-scrollbar/js/perfect-scrollbar.jquery.min.js"></script>
+
+        <!-- Popper.js -->
+        <script type="text/javascript" src="/public/assets/vendor/popper.js/index.js"></script>
+
+        <!-- Bootstrap -->
+        <script type="text/javascript" src="/public/assets/vendor/bootstrap/bootstrap.min.js"></script>
+
+        <!-- Nvd3 - D3 Charts -->
+        <script type="text/javascript" src="/public/assets/vendor/d3/d3.min.js"></script>
+        <script type="text/javascript" src="/public/assets/vendor/nvd3/build/nv.d3.min.js"></script>
+
+        <!-- Data tables -->
+        <script type="text/javascript" src="/public/assets/vendor/datatables.net/js/jquery.dataTables.min.js"></script>
+
+        <script type="text/javascript" src="/public/assets/vendor/datatables-responsive/js/dataTables.responsive.js"></script>
+
+        <!-- PNotify -->
+        <script type="text/javascript" src="/public/assets/vendor/pnotify/pnotify.custom.min.js"></script>
+
+        <!-- Fuse Html -->
+        <script type="text/javascript" src="/public/assets/vendor/fuse-html/fuse-html.min.js"></script>
+
+        <!-- Main JS -->
+        <script type="text/javascript" src="/public/assets/js/main.js"></script>
+        <script type="text/javascript" src="/public/assets/js/custom/Translations.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-app.js"></script> 
+<!-- Add Firebase products that you want to use -->
+<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/7.9.1/modernizr.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-storage.js"></script>
+<script type="text/javascript" src="/public/assets/js/custom/Languages.js"></script>
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+
+<script>
+$(document).ready(function(){
+    Languages.loadLanguages('/dept/admin/tni/language/').then(function(data){
+    var ele = document.getElementById('language');
+    for (var i = 0; i < data.length; i++) {
+        // POPULATE SELECT ELEMENT WITH JSON.
+        ele.innerHTML = ele.innerHTML +
+            '<option value="' + data[i]['_id'] + '">' + data[i]['name'] + '</option>';
+    }
+   });
+    $("#submitBtn").on('click',function(){
+                // disable button
+                let self = this
+                $(self).prop("disabled", true);
+                // add spinner to button
+                $(self).html(
+                    `<i class="fa fa-spinner fa-spin fa-3x loader"></i>`
+                );
+               // let firebaseConfig = Translations.getConfigData('/firebase/config');
+                var firebaseConfig = {
+                            apiKey: "AIzaSyDEQPLbNYogRPr0G47ErxqkGP6VCMvakvI",
+                            authDomain: "tnicc-412a9.firebaseapp.com",
+                            databaseURL: "https://tnicc-412a9.firebaseio.com",
+                            projectId: "tnicc-412a9",
+                            storageBucket: "tnicc-412a9.appspot.com",
+                            messagingSenderId: "1021374360464",
+                            appId: "1:1021374360464:web:5d7f9a0230f14f1d442115",
+                            measurementId: "G-T1GRXX01CV"
+                        };
+                 firebase.initializeApp(firebaseConfig);  
+
+
+                let file = document.getElementById("rorDocs").files[0];  
+                  
+                 //   let filename = image.name
+                    const metadata = { contentType: file.type };
+                    const task = firebase.app().storage().ref('docs/'+file).put(file, metadata); 
+                    task.then(snapshot => snapshot.ref.getDownloadURL()).then(function(url) { 
+                      
+                     let upload = {
+                        language: document.getElementById("language").value,
+                        month: document.getElementById("month").value,
+                        year: document.getElementById("year").value,
+                        docType: document.getElementById("docType").value,
+                        dataURL: url
+                    }
+                    console.log('upload',JSON.stringify(upload)); 
+                     Translations.uploadTranslation('/dept/admin/tni/translation/create',upload).then(function (data){
+                        var json = JSON.stringify(data); 
+                        console.log("json",json);
+/*                         var div = document.getElementById("projectListView");  
+                        let obj = $.parseJSON(json);
+
+                        let projectTemplate = $(Project.getProjectTemplate());
+
+                        $(projectTemplate).find(".qrcodeSrc").attr("src",obj.qrCode);
+                        $(projectTemplate).find(".lead").text(obj.builder.fullname);  
+                        $(projectTemplate).find(".project_title").text(obj.title);  
+                        $(projectTemplate).find(".project_desc").text(obj.projectDescription);  
+                        $(projectTemplate).find(".project_download").attr("href",obj.source);  
+                        $(projectTemplate).find(".project_print").attr("id",obj._id);  
+
+                        $(div).append($(projectTemplate));
+
+                            $(self).prop("disabled", false);
+                            $(self).remove("i");
+                            $('#projectBackdrop').modal("hide"); */
+                        
+                    })
+                   // document.getElementById("photo").src = url; 
+                });  
+
+
+    });
+
+
+
+});
+function create_UUID(){
+            var dt = new Date().getTime();
+            var uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+                var r = (dt + Math.random()*16)%16 | 0;
+                dt = Math.floor(dt/16);
+                return (c=='x' ? r :(r&0x3|0x8)).toString(16);
+            });
+            return uuid;
+    }
+    function selectFileName(input) {
+        if (input.files && input.files[0]) {
+            $("#filename").text(input.files[0].name);
+        }
+    }
+</script>
 </body>
 </html>
