@@ -73,8 +73,14 @@ router.get("/",function(req,res){
   router.get("/admin/distributors",function(req,res){
     res.sendFile(path + "dashboard-distributors.html");
   });
+  router.get("/admin/distributions",function(req,res){
+    res.sendFile(path + "dashboard-distributions.html");
+  });
   router.get("/admin/team",function(req,res){
     res.sendFile(path + "dashboard-team.html");
+  });
+  router.get("/admin/payments",function(req,res){
+    res.sendFile(path + "dashboard-payments.html");
   });
   router.get("/admin/translations",function(req,res){
     res.sendFile(path + "translations.html");
