@@ -71,8 +71,14 @@ a, button, input { outline: medium none !important; color: #ffbc05; }
 h1, h2, h3, h4, h5, h6{font-family: 'Montserrat', sans-serif; font-weight:normal; margin-top: 0px; margin-bottom: 0px; text-transform: capitalize;}
 h1.title2,h2.title2,h3.title2,h4.title2,h5.title2,h6.title2{ font-weight: 600; }
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a { color: inherit; }
+<<<<<<< HEAD
 h1 { font-size: 72px; font-style: normal; line-height: 95px; font-family: 'Engagement', cursive; text-transform: capitalize; color: #ffffff;}
 h2 { font-size: 50px; font-style: normal; line-height: 50px; font-family: 'Engagement', cursive; color: #000; text-transform: capitalize;}
+=======
+h1 { font-size: 42px; font-weight: bold; font-style: normal; line-height: 95px; font-family: 'Tahoma',; text-transform: none; color: #ffffff;}
+h2 { font-size: 20px; font-weight: bold;  font-style: normal; line-height: 50px; font-family: 'Engagement' ; color: #000; text-transform: capitalize;}
+h2.subhead { font-size: 20px; font-weight: bold;  font-style: normal; line-height: 50px; font-family: 'Tahoma' ; color: #000; text-transform: capitalize;}
+>>>>>>> updated index page
 h3 { font-size: 30px; font-style: normal; line-height: 40px; }
 h4 { font-size: 20px; font-style: normal; text-transform: uppercase; margin-bottom: 10px; font-weight: 500; line-height: 26px; color: #000;}
 h5 { font-size: 16px; font-style: normal; line-height: 20px; font-weight: 500;}
@@ -110,7 +116,11 @@ ul.disc li { list-style: disc inside; padding: 0px; margin: 0px; line-height: 30
 
 .lead{font-weight: normal; font-size: 16px; line-height: 30px; margin-bottom: 0;}
 .big-title { font-size: 350px; font-weight: normal; line-height: 350px; background: -webkit-linear-gradient(top, #ff3b30, #ffbc05); background: linear-gradient(top, #ff3b30, #ff3b30); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-family: 'Great Vibes', cursive; }
+<<<<<<< HEAD
 .textrotate{font-size: 100px; line-height: 100px;}
+=======
+.textrotate{font-size: 80px; line-height: 100px;}
+>>>>>>> updated index page
 
 .position-relative{position: relative;}
 .w-100 { width: 100%; }
@@ -974,17 +984,30 @@ form .form-group textarea { resize: vertical; }
 ----------------------------------------------------------------------*/
 
 .banner-form h4{background:orangered; color: #ffffff; padding:15px 30px; font-size: 16px; font-weight: 600; margin-bottom: 0; text-transform: capitalize;}
+<<<<<<< HEAD
 .banner-form form .form-group select.form-control {-moz-appearance: none; -webkit-appearance: none; appearance: none; background-color: rgba(234,234,234,0.5); background-image: url("../images/form-icon/skin-default.png"); background-position: right 12px center; background-repeat: no-repeat; border-radius: 30px; border:none; font-size: 14px; width: 100%; padding: 11px 10px; height: inherit;}
 .banner-form .form-inner .form-group{margin-bottom: 20px;}
 .banner-form .form-inner .form-group select.form-control{color: #ffffff;}
 .banner-form .form-inner .form-group input.form-control{background-color: black; border-radius: 30px; color: #ffffff; padding: 11px 10px;}
 .banner-form .form-inner .form-group label{font-size: 14px; color: #ffffff; text-transform: capitalize; text-align: right;}
 .banner-form .form-inner{background: rgba(0, 0, 0, 0.3); display: inline-block; padding: 30px; width: 100%; border-bottom: 3px solid #ffbc05;}
+=======
+.banner-form form .form-group select.form-control {-moz-appearance: none; -webkit-appearance: none; appearance: none; background-color: white; background-image: url("../images/form-icon/skin-default.png"); background-position: right 12px center; background-repeat: no-repeat; border-radius: 30px; border:none; font-size: 14px; width: 100%; padding: 11px 10px; height: inherit;}
+.banner-form .form-inner .form-group{margin-bottom: 20px;}
+.banner-form .form-inner .form-group select.form-control{color:rgb(128, 128, 128);}
+.banner-form .form-inner .form-group input.form-control{background-color:white; border-radius: 30px; color:black; padding: 11px 10px;}
+.banner-form .form-inner .form-group label{font-size: 14px; color:black; text-transform: capitalize; text-align: right;}
+.banner-form .form-inner{background:transparent, 0.212); display: inline-block; padding: 30px; width: 100%; border-bottom: 3px solid:black;}
+>>>>>>> updated index page
 .banner-form .form-group{margin-bottom: 0; font-weight: bold; font-size: 16px !important; /*display: table;*/}
 .banner-form .form-group > [class*="col-"]{ float: left;}
 .banner-form .dropdown-toggle::after{margin-left: -20px;}
 .banner-form .dropdown-menu{padding: 0;}
+<<<<<<< HEAD
 .banner-form .bootstrap-select > .dropdown-toggle{color: #333333; outline: none !important;}
+=======
+.banner-form .bootstrap-select > .dropdown-toggle{color: white; outline: none !important;}
+>>>>>>> updated index page
 .banner-form .bootstrap-select.btn-group .dropdown-menu li a { padding: 7px 8px; display: block; font-weight: normal; color: #000;line-height: 24px;} 
 .banner-form .bootstrap-select.btn-group .dropdown-menu li.selected a {background: #ffbc05;} 
 .banner-form .bootstrap-select.btn-group .dropdown-toggle .filter-option{overflow: inherit;}
@@ -1503,7 +1526,11 @@ h6.title2 {font-size: 22px; line-height: 30px;}
 /*-------------------------------------------------
   Banner
 ---------------------------------------------------*/
+<<<<<<< HEAD
 .textrotate {font-size: 50px; line-height: 70px;}
+=======
+.textrotate {font-size: 70px; line-height: 70px;}
+>>>>>>> updated index page
 .bg-1 .align-items-center{top: 65%;}
 h1 br, p br{display: none;}
 .banner-form {margin-top: 30px;}
