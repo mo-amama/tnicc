@@ -1,8 +1,20 @@
 var Translations = (function() {
     'use strict';
-    var _config = {};
+    var _template = `<tr>
+    <td class="count"></td>
+    <td class="language"></td>
+    <td class="month"></td>
+    <td class="year"></td>
+    <td class="type"></td>
+    <td class="url"></td>
+    <td class="dateCreated"></td>
+  </tr>`;
+
   
     return {
+      getTamplate(){
+        return _template;
+      },
       async  loadTransaltions(url = '') {
         // Default options are marked with *
         const response = await fetch(url, {
