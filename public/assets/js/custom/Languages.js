@@ -1,8 +1,16 @@
 var Languages = (function() {
     'use strict';
-    var _config = {};
+    var _template = `<tr>
+                          <td class="count"></td>
+                          <td class="name"></td>
+                          <td class="country"></td>
+                          <td class="date"></td>
+                      </tr>`;
   
     return {
+        getTamplate(){
+          return _template;
+        },
         async  createLanguage(url = '', data = {}) {  
           // Default options are marked with *
           const response = await fetch(url, {

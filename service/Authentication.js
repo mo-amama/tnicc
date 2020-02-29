@@ -21,7 +21,6 @@ module.exports = {
         console.log('auth not found') 
         return {error: 'email or password is incorrect'}
     } catch (error) {
-        console.log('error',JSON.stringify(error.message))
 
         return {error: error.message}
     }    

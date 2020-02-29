@@ -1,0 +1,448 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <title>Dashboard</title>
+
+
+        <!-- Icons.css -->
+        <link type="text/css" rel="stylesheet" href="/public/assets/icons/fuse-icon-font/style.css">
+
+        <!-- Animate.css -->
+        <link type="text/css" rel="stylesheet" href="/public/assets/vendor/animate.css/animate.min.css">
+
+        <!-- PNotify -->
+        <link type="text/css" rel="stylesheet" href="/public/assets/vendor/pnotify/pnotify.custom.min.css">
+
+        <!-- Nvd3 - D3 Charts -->
+        <link type="text/css" rel="stylesheet" href="/public/assets/vendor/nvd3/build/nv.d3.min.css"/>
+
+        <!-- Perfect Scrollbar -->
+        <link type="text/css" rel="stylesheet" href="/public/assets/vendor/perfect-scrollbar/css/perfect-scrollbar.min.css"/>
+
+        <!-- Fuse Html -->
+        <link type="text/css" rel="stylesheet" href="/public/assets/vendor/fuse-html/fuse-html.min.css"/>
+
+        <!-- Main CSS -->
+        <link type="text/css" rel="stylesheet" href="/public/assets/css/main.css">
+        <!-- / STYLESHEETS -->
+
+        <!-- / JAVASCRIPT -->
+        <!-- STYLESHEETS -->
+        <style type="text/css">
+            [fuse-cloak],
+            .fuse-cloak {
+                display: none !important;
+            }
+            .error{color:red}
+        </style>
+
+
+    </head>
+
+    <body class="layout layout-vertical layout-left-navigation layout-below-toolbar">
+
+        
+        
+
+<div id="wrapper">
+
+ 
+    
+    <aside id="aside" class="aside aside-left"
+    data-fuse-bar="aside" data-fuse-bar-media-step="md"
+    data-fuse-bar-position="left">
+ <div class="aside-content-wrapper">
+
+<div class="aside-content bg-primary-500 text-auto">
+
+<div class="aside-toolbar">
+
+ <div class="logo">
+     <span class="logo-icon">F</span><span class="logo-text">FUSE</span>
+ </div>
+
+ <button id="toggle-fold-aside-button" type="button" class="btn btn-icon d-none d-lg-block"
+         data-fuse-aside-toggle-fold>
+     <i class="icon icon-backburger"></i>
+ </button>
+
+</div>
+
+<ul class="nav flex-column custom-scrollbar" id="sidenav" data-children=".nav-item">
+
+<li class="nav-item" role="tab" id="heading-dashboards">
+
+<a class="nav-link ripple "
+data-toggle="collapse"
+data-target="#collapse-dashboards"
+href="/admin/dashboard"
+aria-expanded="true"
+aria-controls="collapse-dashboards">
+<i class="icon s-4 icon-tile-four"></i>
+<span>Dashboard</span>
+</a>     
+</ul>
+</li>
+<li class="nav-item">
+   <a class="nav-link ripple " href="#"
+    data-page-url="">
+    <i class="icon s-4 icon-calendar-today"></i>
+    <span>Manage Teams</span>
+    </a>
+</li>
+<li class="nav-item">
+    <a class="nav-link ripple " href="#"
+    data-page-url="">
+    <i class="icon s-4 icon-calendar-today"></i>
+    <span>Manage Languages</span>
+    </a>
+</li>
+<li class="nav-item">
+    <a class="nav-link ripple " href="/admin/translations"
+    data-page-url="">
+    <i class="icon s-4 icon-calendar-today"></i>
+    <span>Manage Translations</span>
+    </a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link ripple " href="/admin/distributions"
+data-page-url="">
+<i class="icon s-4 icon-group"></i>
+<span>Manage Distributions</span>
+</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link ripple " href="/admin/distributors/"
+data-page-url="">
+<i class="icon s-4 icon-people"></i>
+<span>Manage Distributors</span>
+</a>
+</li>
+
+<li class="nav-item">
+    <a class="nav-link ripple " href="/admin/payments"
+        data-page-url="">
+        <i class="icon s-4 icon-cash"></i>
+        <span>Manage Payments</span>
+    </a>
+</li>
+</ul>
+</div>
+</div>
+</aside>
+
+
+    <div class="content-wrapper">
+
+        
+            <nav id="toolbar" class="fixed-top bg-white">
+
+    <div class="row no-gutters align-items-center flex-nowrap">
+
+        <div class="col">
+
+            <div class="row no-gutters align-items-center flex-nowrap">
+
+                
+
+                    <button type="button" class="toggle-aside-button btn btn-icon d-block d-lg-none"
+                            data-fuse-bar-toggle="aside">
+                        <i class="icon icon-menu"></i>
+                    </button>
+
+                    <div class="toolbar-separator d-block d-lg-none"></div>
+
+                
+
+
+                <div class="shortcuts-wrapper row no-gutters align-items-center px-0 px-sm-2">
+
+                    <div class="shortcuts row no-gutters align-items-center d-none d-md-flex">
+                    </div>
+
+                    <div class="add-shortcut-menu-button dropdown px-1 px-sm-3">
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="col-auto">
+
+            <div class="row no-gutters align-items-center justify-content-end">
+
+                <div class="user-menu-button dropdown">
+
+                    <div class="dropdown-toggle ripple row align-items-center no-gutters px-2 px-sm-4" role="button"
+                         id="dropdownUserMenu"
+                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <div class="avatar-wrapper">
+                            <img class="avatar" src="/public/assets/images/avatars/profile.jpg">
+                            <i class="status text-green icon-checkbox-marked-circle s-4"></i>
+                        </div>
+                        <span class="username mx-3 d-none d-md-block">Super Admin</span>
+                    </div>
+
+                    <div class="dropdown-menu" aria-labelledby="dropdownUserMenu">
+
+                        <a class="dropdown-item" href="#">
+                            <div class="row no-gutters align-items-center flex-nowrap">
+                                <i class="icon-account"></i>
+                                <span class="px-3">My Profile</span>
+                            </div>
+                        </a>
+
+                        <a class="dropdown-item" href="#">
+                            <div class="row no-gutters align-items-center flex-nowrap">
+                                <i class="icon-email"></i>
+                                <span class="px-3">Inbox</span>
+                            </div>
+                        </a>
+
+                        <a class="dropdown-item" href="#">
+                            <div class="row no-gutters align-items-center flex-nowrap">
+                                <i class="status text-green icon-checkbox-marked-circle"></i>
+                                <span class="px-3">Online</span>
+                            </div>
+                        </a>
+
+                        <div class="dropdown-divider"></div>
+
+                        <a class="dropdown-item" href="#">
+                            <div class="row no-gutters align-items-center flex-nowrap">
+                                <i class="icon-logout"></i>
+                                <span class="px-3">Logout</span>
+                            </div>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div class="toolbar-separator"></div>
+
+                <div class="toolbar-separator"></div>
+
+                <div class="language-button dropdown">
+
+                    <div
+                        class="dropdown-toggle ripple row align-items-center justify-content-center no-gutters px-0 px-sm-4"
+                        role="button"
+                        id="dropdownLanguageMenu"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <div class="row no-gutters align-items-center">
+                            <img class="flag mr-2" src="/public/assets/images/flags/us.png">
+                            <span class="d-none d-md-block">EN</span>
+                        </div>
+                    </div>
+
+                    <div class="dropdown-menu" aria-labelledby="dropdownLanguageMenu">
+
+                        <a class="dropdown-item" href="#">
+                            <div class="row no-gutters align-items-center flex-nowrap">
+                                <img class="flag" src="/public/assets/images/flags/us.png">
+                                <span class="px-3">English</span>
+                            </div>
+                        </a>
+
+                        <a class="dropdown-item" href="#">
+                            <div class="row no-gutters align-items-center flex-nowrap">
+                                <img class="flag" src="/public/assets/images/flags/es.png">
+                                <span class="px-3">Spanish</span>
+                            </div>
+                        </a>
+
+                        <a class="dropdown-item" href="#">
+                            <div class="row no-gutters align-items-center flex-nowrap">
+                                <img class="flag" src="/public/assets/images/flags/tr.png">
+                                <span class="px-3">Turkish</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="toolbar-separator"></div>
+
+
+                
+
+            </div>
+        </div>
+    </div>
+</nav>
+        
+
+        <div class="content">
+            <div id="project-dashboard" class="page-layout simple right-sidebar tabbed">
+
+    <div class="page-content-wrapper">
+
+        <!-- HEADER -->
+        <div class="page-header bg-secondary text-auto d-flex flex-column justify-content-between px-6 pt-4 pb-0">
+
+            <div class="row no-gutters align-items-start justify-content-between flex-nowrap">
+
+                <div>
+                    <span class="h2">Rhapsody of Realities Languages</span>
+                </div>
+
+                <button type="button" class="sidebar-toggle-button btn btn-icon d-block d-xl-none"
+                        data-fuse-bar-toggle="dashboard-project-sidebar" aria-label="Toggle sidebar">
+                    <i class="icon icon-menu"></i>
+                </button>
+            </div>
+
+        </div>
+        <!-- / HEADER -->
+
+        <!-- CONTENT -->
+        <div class="page-content pl-14">
+
+    
+            <div class="tab-content">
+   
+        <!-- WIDGET 4 -->
+        <div class="col-lg-12 col-sm-12">
+    <div class="widget widget4 card">
+      
+        <form class="p-14">
+            <div class="form-group">
+           <input type="text" class="form-control" placeholder="Language Name" id="language">
+             <label class="form-control-label" for="formGroupExampleInput">Add Language</label>
+                <span class="error" id="language_error"></span>
+            </div>
+             <div class="form-group">
+                <select class="form-control custom-select" id="country">
+                    <option selected value="" id="year">Select Country</option>
+                    <option value="Nigeria">Nigeria</option>
+                    <option value="South Africa">South Africa</option>
+                    <option value="Ghana">Ghana</option>
+                 </select>
+                 <span class="error" id="country_error"></span>
+
+             </div>
+              <div class="form-group px-32">
+              <button type="button" class="btn btn-secondary  ml-48 px-20 " id="submitBtn">Add Language</button>
+          </form>                
+
+                    </div>
+
+            </div>
+        </div>
+</div>
+ 
+
+           </div>
+    <!-- / WIDGET GROUP -->
+</div>
+         </div>
+</div>
+</div>
+    </div>
+        <!-- / CONTENT -->
+    </div>    
+    </div>
+
+</div>
+
+        <!-- JAVASCRIPT -->
+
+        <!-- jQuery -->
+        <script type="text/javascript" src="/public/assets/js/jquery.min.js"></script>
+
+        <!-- Mobile Detect -->
+        <script type="text/javascript" src="/public/assets/vendor/mobile-detect/mobile-detect.min.js"></script>
+
+        <!-- Perfect Scrollbar -->
+        <script type="text/javascript"
+                src="/public/assets/vendor/perfect-scrollbar/js/perfect-scrollbar.jquery.min.js"></script>
+
+        <!-- Popper.js -->
+        <script type="text/javascript" src="/public/assets/vendor/popper.js/index.js"></script>
+
+        <!-- Bootstrap -->
+        <script type="text/javascript" src="/public/assets/vendor/bootstrap/bootstrap.min.js"></script>
+
+        <!-- Nvd3 - D3 Charts -->
+        <script type="text/javascript" src="/public/assets/vendor/d3/d3.min.js"></script>
+        <script type="text/javascript" src="/public/assets/vendor/nvd3/build/nv.d3.min.js"></script>
+
+        <!-- Data tables -->
+        <script type="text/javascript" src="/public/assets/vendor/datatables.net/js/jquery.dataTables.min.js"></script>
+
+        <script type="text/javascript" src="/public/assets/vendor/datatables-responsive/js/dataTables.responsive.js"></script>
+
+        <!-- PNotify -->
+        <script type="text/javascript" src="/public/assets/vendor/pnotify/pnotify.custom.min.js"></script>
+
+        <!-- Fuse Html -->
+        <script type="text/javascript" src="/public/assets/vendor/fuse-html/fuse-html.min.js"></script>
+
+        <!-- Main JS -->
+        <script type="text/javascript" src="/public/assets/js/main.js"></script>
+        <script type="text/javascript" src="/public/assets/js/custom/Languages.js"></script>
+
+
+<script>
+$(document).ready(function(){  
+
+  $('#submitBtn').on('click',function(){
+
+
+    var language =  document.getElementById('language').value;
+    var country =  document.getElementById('country').value;
+
+
+    document.getElementById('language_error').innerHTML = "";
+    document.getElementById('country_error').innerHTML = "";
+    
+    if(language == ''){
+      document.getElementById('language_error').innerHTML = "required";
+      document.getElementById('language').focus();
+      return false;
+    }else if(country == ''){
+      document.getElementById('country_error').innerHTML = "required";
+      document.getElementById('country').focus();
+      return false;
+    }
+    let languageDetails = {
+        name: language,
+        country: country
+    }
+    Languages.createLanguage('/dept/admin/tni/language/create',languageDetails).then(function(response){
+
+        console.log("languageDetails",response);
+      }).catch(function(error){
+        console.log('error',error);
+      }); 
+  });
+
+});
+function create_UUID(){
+            var dt = new Date().getTime();
+            var uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+                var r = (dt + Math.random()*16)%16 | 0;
+                dt = Math.floor(dt/16);
+                return (c=='x' ? r :(r&0x3|0x8)).toString(16);
+            });
+            return uuid;
+    }
+    function selectFileName(input) {
+        if (input.files && input.files[0]) {
+            $("#filename").text(input.files[0].name);
+        }
+    }
+</script>
+</body>
+</html>

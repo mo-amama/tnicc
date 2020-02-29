@@ -62,22 +62,34 @@ var port = process.env.PORT || 8081;
   router.get("/admin/dashboard",function(req,res){
     res.sendFile(path + "dashboard.html");
   });
-  router.get("/admin/languages",function(req,res){
+  router.get("/admin/languages/create",function(req,res){
     res.sendFile(path + "languages.html");
   });
+  router.get("/admin/languages",function(req,res){
+    res.sendFile(path + "viewlang.html");
+  });
   router.get("/admin/distributors",function(req,res){
+    res.sendFile(path + "viewdistributors.html");
+  });
+  router.get("/admin/createdistributors",function(req,res){
     res.sendFile(path + "dashboard-distributors.html");
   });
-  router.get("/admin/distributions",function(req,res){
+  router.get("/admin/createdistributions",function(req,res){
     res.sendFile(path + "dashboard-distributions.html");
   });
-  router.get("/admin/team",function(req,res){
+  router.get("/admin/distributions",function(req,res){
+    res.sendFile(path + "viewdistribution.html");
+  });
+  router.get("/admin/createteam",function(req,res){
     res.sendFile(path + "dashboard-team.html");
+  });
+  router.get("/admin/team",function(req,res){
+    res.sendFile(path + "viewteam.html");
   });
   router.get("/admin/payments",function(req,res){
     res.sendFile(path + "dashboard-payments.html");
   });
-  router.get("/admin/translations",function(req,res){
+  router.get("/admin/createtranslations",function(req,res){
     res.sendFile(path + "translations.html");
   });
   router.get("/pwdreset",function(req,res){ 
@@ -92,6 +104,9 @@ var port = process.env.PORT || 8081;
   
   router.get("/tni/team/link/:id",middleware.authenticateRoute,function(req,res){
     res.sendFile(path + "auth-register.html");
+  });
+  router.get("/payments",function(req,res){
+    res.sendFile(path + "payments.html");
   });
 
   app.use('/dept/admin/tni/auth', require('./route/Authentication')); 
