@@ -42,42 +42,9 @@
         <link type="text/css" rel="stylesheet" href="/public/assets/css/main.css">
         <!-- / STYLESHEETS -->
 
-        <!-- JAVASCRIPT -->
-
-        <!-- jQuery -->
-        <script type="text/javascript" src="/public/assets/vendor/jquery/dist/jquery.min.js"></script>
-
-        <!-- Mobile Detect -->
-        <script type="text/javascript" src="/public/assets/vendor/mobile-detect/mobile-detect.min.js"></script>
-
-        <!-- Perfect Scrollbar -->
-        <script type="text/javascript"
-                src="/public/assets/vendor/perfect-scrollbar/js/perfect-scrollbar.jquery.min.js"></script>
-
-        <!-- Popper.js -->
-        <script type="text/javascript" src="/public/assets/vendor/popper.js/index.js"></script>
-
-        <!-- Bootstrap -->
-        <script type="text/javascript" src="/public/assets/vendor/bootstrap/bootstrap.min.js"></script>
-
-        <!-- Nvd3 - D3 Charts -->
-        <script type="text/javascript" src="/public/assets/vendor/d3/d3.min.js"></script>
-        <script type="text/javascript" src="/public/assets/vendor/nvd3/build/nv.d3.min.js"></script>
-
-        <!-- Data tables -->
-        <script type="text/javascript" src="/public/assets/vendor/datatables.net/js/jquery.dataTables.min.js"></script>
-
-        <script type="text/javascript" src="/public/assets/vendor/datatables-responsive/js/dataTables.responsive.js"></script>
-
-        <!-- PNotify -->
-        <script type="text/javascript" src="/public/assets/vendor/pnotify/pnotify.custom.min.js"></script>
-
-        <!-- Fuse Html -->
-        <script type="text/javascript" src="/public/assets/vendor/fuse-html/fuse-html.min.js"></script>
-
-        <!-- Main JS -->
-        <script type="text/javascript" src="/public/assets/js/main.js"></script>
-
+        <style>
+        .error{color:red}
+        </style>
         <!-- / JAVASCRIPT -->
     </head>
 
@@ -89,7 +56,7 @@
 <div id="wrapper">
 
     
-    <aside id="aside" class="aside aside-left"
+<aside id="aside" class="aside aside-left"
     data-fuse-bar="aside" data-fuse-bar-media-step="md"
     data-fuse-bar-position="left">
  <div class="aside-content-wrapper">
@@ -340,22 +307,45 @@ data-page-url="">
             <form class="pb-0">
                 <div class="row pt-0 p-6">
                     <div class="col">
-                        <input type="text" class="form-control" placeholder="Team Name">
+                        <div class="form-group">
+                        <input type="text" class="form-control" id="name" placeholder="Team Name" onkeyup="generteLink()"  onkeydown="generteLink()">
+                        <span class="error" id="name_error"></span>   
+                    </div>
                     </div>
                     <div class="col">
-                        <input type="text" class="form-control" placeholder="Team Leader's Name">
+                        <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Team Leader's Name" id="teamLeaderName">
+                        <span class="error" id="teamLeaderName_error"></span>  
+                    </div>
                     </div>
                 </div>
                 <div class="row p-6">
                     <div class="col">
-                        <input type="email" class="form-control email" placeholder="Team Leader's Email">
+                        <div class="form-group">
+                        <input type="email" class="form-control email" placeholder="Team Leader's Email" id="email">
+                        <span class="error" id="email_error"></span>   
+                    </div>
                     </div>
                     <div class="col">
-                        <input type="number" class="form-control phone" placeholder="Team Leader's Phone number">
+                        <div class="form-group">
+                        <input type="number" class="form-control phone" placeholder="Team Leader's Phone number" id="phoneNumber">
+                    <span class="error" id="phoneNumber_error"></span>    
+                    </div>
+
                     </div>
                 </div>
+                <hr>
+
+                <div class="row p-6">
+                    <div class="col">
+                       <label class="form-control"><strong>Team Link:</strong><span id="teamLink"></span></label> 
+                    </div>
+                    <div class="col">
+                        <label class="form-control"><strong>Sponsorship Link:</strong><span id="sponsorshipLink"></span></label>
+                     </div>
+                </div>
                 <div class="row">
-                        <button class="btn btn-secondary" style="position: relative; margin-left:400px;" type="submit">Create Team</button>
+                        <button class="btn btn-secondary" style="position: relative; margin-left:400px;" type="button" id="submitBtn">Create Team</button>
                 </div>
             </form>
 
@@ -374,5 +364,138 @@ data-page-url="">
     </div>
 
 </div>
-</body>
+        <!-- JAVASCRIPT -->
+
+        <!-- jQuery -->
+        <script type="text/javascript" src="/public/assets/vendor/jquery/dist/jquery.min.js"></script>
+
+        <!-- Mobile Detect -->
+        <script type="text/javascript" src="/public/assets/vendor/mobile-detect/mobile-detect.min.js"></script>
+
+        <!-- Perfect Scrollbar -->
+        <script type="text/javascript"
+                src="/public/assets/vendor/perfect-scrollbar/js/perfect-scrollbar.jquery.min.js"></script>
+
+        <!-- Popper.js -->
+        <script type="text/javascript" src="/public/assets/vendor/popper.js/index.js"></script>
+
+        <!-- Bootstrap -->
+        <script type="text/javascript" src="/public/assets/vendor/bootstrap/bootstrap.min.js"></script>
+
+        <!-- Nvd3 - D3 Charts -->
+        <script type="text/javascript" src="/public/assets/vendor/d3/d3.min.js"></script>
+        <script type="text/javascript" src="/public/assets/vendor/nvd3/build/nv.d3.min.js"></script>
+
+        <!-- Data tables -->
+        <script type="text/javascript" src="/public/assets/vendor/datatables.net/js/jquery.dataTables.min.js"></script>
+
+        <script type="text/javascript" src="/public/assets/vendor/datatables-responsive/js/dataTables.responsive.js"></script>
+
+        <!-- PNotify -->
+        <script type="text/javascript" src="/public/assets/vendor/pnotify/pnotify.custom.min.js"></script>
+
+        <!-- Fuse Html -->
+        <script type="text/javascript" src="/public/assets/vendor/fuse-html/fuse-html.min.js"></script>
+
+        <!-- Main JS -->
+        <script type="text/javascript" src="/public/assets/js/main.js"></script>
+        <script type="text/javascript" src="/public/assets/js/custom/Team.js"></script>
+
+        <script>
+         var baseTeamURL = '/tni/team/link/';
+         var basePartnershipURL = '/tni/sponsor/';
+         
+
+        $(document).ready(function(){  
+
+                $("#teamLink").text(baseTeamURL);
+                $("#sponsorshipLink").text(basePartnershipURL);
+
+                $('#submitBtn').on('click',function(){
+
+
+                var team =  document.getElementById('name').value;
+                var leader =  document.getElementById('teamLeaderName').value;
+                var number =  document.getElementById('phoneNumber').value;
+                var email =  document.getElementById('email').value;
+
+
+                document.getElementById('name_error').innerHTML = "";
+                document.getElementById('teamLeaderName_error').innerHTML = "";
+                document.getElementById('phoneNumber_error').innerHTML = "";
+                document.getElementById('email_error').innerHTML = "";
+
+                if(team == ''){
+                    document.getElementById('name_error').innerHTML = "required";
+                    document.getElementById('name').focus();
+                    return false;
+                }else if(leader == ''){
+                    document.getElementById('teamLeaderName_error').innerHTML = "required";
+                    document.getElementById('teamLeaderName').focus();
+                    return false;
+                }else if(number == ''){
+                    document.getElementById('phoneNumber_error').innerHTML = "required";
+                    document.getElementById('phoneNumber').focus();
+                    return false;
+                }else if(email == ''){
+                    document.getElementById('email_error').innerHTML = "required";
+                    document.getElementById('email').focus();
+                    return false;
+                }
+                var team =  document.getElementById('name').value;
+                var leader =  document.getElementById('teamLeaderName').value;
+                var number =  document.getElementById('phoneNumber').value;
+                var email =  document.getElementById('email').value;
+
+                let teamDetails = {
+                    name: team,
+                    teamLink: $("#teamLink").text(),
+                    sponsorshipLink: $("#sponsorshipLink").text(),
+                    teamLeaderName: leader,
+                    phoneNumber: number,
+                    email: email,
+                }
+                Team.createTeam('/dept/admin/tni/team/create',teamDetails).then(function(response){
+
+                    console.log("teamDetails",response);
+                }).catch(function(error){
+                    console.log('error',error);
+                }); 
+                });
+        });
+        function generteLink() {
+            var x = document.getElementById("name");
+            x.value = x.value.toUpperCase();
+            x.value = x.value.replace(/\s/g, '');     
+            $("#teamLink").text(baseTeamURL+x.value);
+            $("#sponsorshipLink").text(basePartnershipURL+x.value);
+        }; 
+        Team.loadBuildersProject().then(function(data){                   
+            var json = JSON.stringify(data); 
+            var div = document.getElementById("projectListView");  
+            $(div).empty();
+            let count = 0;
+            $.each($.parseJSON(json), function(keys,obj) {
+                    count++
+                    let projectTemplate = $(Project.getProjectTemplate());
+
+                    $(projectTemplate).find(".qrcodeSrc").attr("src",obj.qrCode);
+                    $(projectTemplate).find(".lead").text(obj.builder.fullname);  
+                    $(projectTemplate).find(".project_title").text(obj.title);  
+                    $(projectTemplate).find(".project_desc").text(obj.projectDescription);  
+                    $(projectTemplate).find(".project_download").attr("href",obj.source);  
+                    $(projectTemplate).find(".project_print").attr("id",obj._id);  
+
+                    $(div).append($(projectTemplate));
+            });  
+
+            $("#project_count").text(count);
+
+        }).catch(function(error){
+            console.log(error.message);
+        });
+
+        </script>
+        </body>
+
 </html>

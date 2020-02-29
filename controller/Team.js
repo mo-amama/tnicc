@@ -6,6 +6,12 @@ const teamService = require('../service/Team');
         .catch(err => next(err));
 }
 
+exports.activate = function(req, res, next) {
+    teamService.activate(req.uid,req.body)
+        .then((data) => res.status(200).send(data))
+        .catch(err => next(err));
+}
+
 exports.getAll = function(req, res, next) {
     teamService.getAll()
         .then(team => res.json(team))
@@ -17,7 +23,11 @@ exports.getById = function(req, res, next) {
         .then(teams => teams ? res.json(teams) : res.sendStatus(404))
         .catch(err => next(err));
 }
-
+exports.getByName = function(req, res, next) {
+    teamService.getByName(req.params.id)
+        .then(teams => teams ? res.json(teams) : res.sendStatus(404))
+        .catch(err => next(err));
+}
 exports.update = function(req, res, next) {
     teamService.update(req.params.id,  req.body)
         .then(() => res.json({}))

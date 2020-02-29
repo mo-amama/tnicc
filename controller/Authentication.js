@@ -1,9 +1,8 @@
 const authService = require('../service/Authentication');
 
 exports.authenticate = function(req, res, next) {
-    console.log("auth",req.body)
     authService.authenticate({ email:req.body.email, password:req.body.password }) 
-        .then(user => user ? res.json(user) : res.status(400).json({ message: 'Username or password is incorrect' }))
+        .then(data => data ? res.status(200).send(data) : res.status(400).json({ message: 'Username or password is incorrect' }))
         .catch(err => next(err));
 }
 

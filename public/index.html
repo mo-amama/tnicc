@@ -728,7 +728,7 @@ Back to Top -->
 </body>
 <script>
   $(document).ready(function(){
-  
+    ipLookUp();
     Languages.loadLanguages('/dept/admin/tni/language/').then(function(data){
       var ele = $('#language');
         for (var i = 0; i < data.length; i++) {
@@ -839,6 +839,20 @@ Back to Top -->
   // Cleanup
   window.URL.revokeObjectURL(a.href);
   document.body.removeChild(a);
+}
+function ipLookUp () {
+  $.ajax('http://ip-api.com/json')
+  .then(
+      function success(response) {
+          console.log('User\'s Location Data is ', response);
+          console.log('User\'s Country', response.country);
+      },
+
+      function fail(data, status) {
+          console.log('Request failed.  Returned status of',
+                      status);
+      }
+  );
 }
   </script>
   

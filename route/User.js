@@ -9,6 +9,7 @@ router.get('/current', user.getCurrent);
 router.get('/:id', user.getById);
 router.put('/current/:id', user.update);
 router.post('/create', user.register);
+router.post('/resetpwd', user.resetPassword);
 router.delete('/:id', user._delete);
 
 module.exports = router;  
