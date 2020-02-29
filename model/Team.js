@@ -4,13 +4,22 @@ const teamSchema = mongoose.Schema({
      name: {
          type: String
      },
-     language: {
+     language: [{
          type: String
-     },
+     }],
      teamLink: {
          type: String
      },
      partnershipLink: {
+        type: String
+    },
+    teamLeaderName: {
+        type: String
+    },
+    phoneNumber: {
+        type: String
+    },
+    email: {
         type: String
     },
      dateCreated:{
@@ -18,6 +27,8 @@ const teamSchema = mongoose.Schema({
          default: Date.now 
      },
 })
+
+
 
 
 

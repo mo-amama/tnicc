@@ -5,7 +5,11 @@ const userService = require('../service/User');
         .then((data) => res.status(200).send(data))
         .catch(err => next(err));
 }
-
+exports.resetPassword = function(req, res, next) {
+    userService.reset(req.body)
+        .then((data) => res.status(200).send(data))
+        .catch(err => next(err));
+}
 exports.getAll = function(req, res, next) {
     userService.getAll()
         .then(users => res.json(users))

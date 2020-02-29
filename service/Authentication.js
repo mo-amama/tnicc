@@ -7,23 +7,23 @@ module.exports = {
     getById,
     create,
     update,
+    checkIfEmailVerified,
     delete: _delete 
 };
 
  async function authenticate({ email, password }) {
     try {
-        
         const auth = await Authenticaton.findByCredentials(email, password)
-        if (!auth) {
-            console.log('auth not found') 
-            return {error: 'email or password is incorrect'}
+        if (auth) {
+            const token = await auth.generateAuthToken()
+            return { auth, token }
         }
-        const token = await auth.generateAuthToken()
-        return { auth, token }
+        console.log('auth not found') 
+        return {error: 'email or password is incorrect'}
     } catch (error) {
+
         return {error: error.message}
     }    
-
 } 
 
 /*  async function authenticate({ email, password }) {
@@ -44,6 +44,24 @@ async function getAll() {
 
 async function getById(id) {
     return await Authenticaton.findById(id).select('-hash');
+}
+
+async function checkIfEmailVerified(email) {
+   const auth = await Authenticaton.findOne({ email: email }); 
+   console.log('auth',auth.userClaims.isEmailVerified);
+
+   if (!auth) {
+
+        return false; 
+
+    }else{
+        console.log(auth.userClaims.isEmailVerified);
+       if(auth.userClaims.isEmailVerified){
+            return true;
+        }else{
+           return false;
+        }
+    }
 }
 
 async function create(authParam) {

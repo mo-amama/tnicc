@@ -1,15 +1,13 @@
 const nodemailer = require('nodemailer');
 
   //fake mail server for development purpose
-/* let transport = nodemailer.createTransport({
-    host: 'smtp.mailtrap.io',
-    port: 2525,
-    auth: {
-       user: '832c8b07c8295e',
-       pass: 'ecedaa8015ec1c'
-    }
-});  */
- 
+ let transport = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: 'tnicc.hq@gmail.com',
+    pass: 'Lagos2020'
+  }
+});  
 
 /* //Sample message with attachment
 const message = {

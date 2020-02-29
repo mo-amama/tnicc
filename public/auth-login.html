@@ -14,64 +14,30 @@
         </style>
 
         <!-- Icons.css -->
-        <link type="text/css" rel="stylesheet" href="/assets/icons/fuse-icon-font/style.css">
+        <link type="text/css" rel="stylesheet" href="/public/assets/icons/fuse-icon-font/style.css">
 
         <!-- Animate.css -->
-        <link type="text/css" rel="stylesheet" href="/assets/vendor/animate.css/animate.min.css">
+        <link type="text/css" rel="stylesheet" href="/public/assets/vendor/animate.css/animate.min.css">
 
         <!-- PNotify -->
-        <link type="text/css" rel="stylesheet" href="/assets/vendor/pnotify/pnotify.custom.min.css">
+        <link type="text/css" rel="stylesheet" href="/public/assets/vendor/pnotify/pnotify.custom.min.css">
 
         <!-- Nvd3 - D3 Charts -->
-        <link type="text/css" rel="stylesheet" href="/assets/vendor/nvd3/build/nv.d3.min.css"/>
+        <link type="text/css" rel="stylesheet" href="/public/assets/vendor/nvd3/build/nv.d3.min.css"/>
 
         <!-- Perfect Scrollbar -->
-        <link type="text/css" rel="stylesheet" href="/assets/vendor/perfect-scrollbar/css/perfect-scrollbar.min.css"/>
+        <link type="text/css" rel="stylesheet" href="/public/assets/vendor/perfect-scrollbar/css/perfect-scrollbar.min.css"/>
 
         <!-- Fuse Html -->
-        <link type="text/css" rel="stylesheet" href="/assets/vendor/fuse-html/fuse-html.min.css"/>
+        <link type="text/css" rel="stylesheet" href="/public/assets/vendor/fuse-html/fuse-html.min.css"/>
 
         <!-- Main CSS -->
-        <link type="text/css" rel="stylesheet" href="/assets/css/main.css">
+        <link type="text/css" rel="stylesheet" href="/public/assets/css/main.css">
         <!-- / STYLESHEETS -->
 
-        <!-- JAVASCRIPT -->
-
-        <!-- jQuery -->
-        <script type="text/javascript" src="/assets/vendor/jquery/dist/jquery.min.js"></script>
-
-        <!-- Mobile Detect -->
-        <script type="text/javascript" src="/assets/vendor/mobile-detect/mobile-detect.min.js"></script>
-
-        <!-- Perfect Scrollbar -->
-        <script type="text/javascript"
-                src="/assets/vendor/perfect-scrollbar/js/perfect-scrollbar.jquery.min.js"></script>
-
-        <!-- Popper.js -->
-        <script type="text/javascript" src="/assets/vendor/popper.js/index.js"></script>
-
-        <!-- Bootstrap -->
-        <script type="text/javascript" src="/assets/vendor/bootstrap/bootstrap.min.js"></script>
-
-        <!-- Nvd3 - D3 Charts -->
-        <script type="text/javascript" src="/assets/vendor/d3/d3.min.js"></script>
-        <script type="text/javascript" src="/assets/vendor/nvd3/build/nv.d3.min.js"></script>
-
-        <!-- Data tables -->
-        <script type="text/javascript" src="/assets/vendor/datatables.net/js/jquery.dataTables.min.js"></script>
-
-        <script type="text/javascript" src="/assets/vendor/datatables-responsive/js/dataTables.responsive.js"></script>
-
-        <!-- PNotify -->
-        <script type="text/javascript" src="/assets/vendor/pnotify/pnotify.custom.min.js"></script>
-
-        <!-- Fuse Html -->
-        <script type="text/javascript" src="/assets/vendor/fuse-html/fuse-html.min.js"></script>
-
-        <!-- Main JS -->
-        <script type="text/javascript" src="/assets/js/main.js"></script>
-
-        <!-- / JAVASCRIPT -->
+        <style>
+        .error{color:red}
+        </style>
     </head>
 
     <body class="layout layout-vertical">
@@ -81,21 +47,24 @@
             <div id="login" class="p-8">
     <div class="form-wrapper md-elevation-8 p-8">
         <div class="logo pr-15 ml-14">
-            <img src="/assets/images/logos/logo.jpeg" alt="">
+            <img src="/public/assets/images/logos/logo.jpeg" alt="">
         </div>
         <div class="title mt-4 mb-8">Log in to your account</div>
 
-        <form name="loginForm" novalidate>
+        <form name="loginForm">
 
+            <div class="form-group mb-4"><span class="error" id="login_error"></span></div>
             <div class="form-group mb-4">
                 <input type="email" class="form-control" id="loginFormInputEmail" aria-describedby="emailHelp"
                        placeholder=" "/>
                 <label for="loginFormInputEmail">Email address</label>
+                <span class="error" id="loginFormInputEmail_error"></span>
             </div>
 
             <div class="form-group mb-4">
                 <input type="password" class="form-control" id="loginFormInputPassword" placeholder="Password"/>
                 <label for="loginFormInputPassword">Password</label>
+                <span class="error" id="loginFormInputPassword_error"></span>
             </div>
 
             <div class="remember-forgot-password row no-gutters align-items-center justify-content-between pt-4">
@@ -108,16 +77,16 @@
                     </label>
                 </div>
 
-                <a href="#" class="forgot-password text-secondary mb-4">Forgot Password?</a>
+                <a href="/forgotpwd" class="forgot-password text-secondary mb-4">Forgot Password?</a>
             </div>
 
-            <button type="submit" class="submit-button btn btn-block btn-secondary my-4 mx-auto" aria-label="LOG IN">
+            <button type="button" id="loginBtn" class="submit-button btn btn-block btn-secondary my-4 mx-auto" aria-label="LOG IN">
                 LOG IN
             </button>
 
         </form>
 
-        <div class="separator">
+<!--         <div class="separator">
             <span class="text">OR</span>
         </div>
 
@@ -133,11 +102,11 @@
                     <i class="icon-facebook s-4"></i>
                     <span>Log in with Facebook</span>
                 </span>
-        </button>
+        </button> -->
 
         <div class="register d-flex flex-column flex-sm-row align-items-center justify-content-center mt-8 mb-6 mx-auto">
             <span class="text mr-sm-2">Don't have an account?</span>
-            <a class="link text-secondary" href="pages-auth-register.html">Create an account</a>
+            <a class="link text-secondary" href="#">Create an account</a>
         </div>
 
     </div>
@@ -153,7 +122,85 @@
     </div>
 
 </div>
-        
+        <!-- JAVASCRIPT -->
+
+        <!-- jQuery -->
+        <script type="text/javascript" src="/public/assets/vendor/jquery/dist/jquery.min.js"></script>
+
+        <!-- Mobile Detect -->
+        <script type="text/javascript" src="/public/assets/vendor/mobile-detect/mobile-detect.min.js"></script>
+
+        <!-- Perfect Scrollbar -->
+        <script type="text/javascript"
+                src="/public/assets/vendor/perfect-scrollbar/js/perfect-scrollbar.jquery.min.js"></script>
+
+        <!-- Popper.js -->
+        <script type="text/javascript" src="/public/assets/vendor/popper.js/index.js"></script>
+
+        <!-- Bootstrap -->
+        <script type="text/javascript" src="/public/assets/vendor/bootstrap/bootstrap.min.js"></script>
+
+        <!-- Nvd3 - D3 Charts -->
+        <script type="text/javascript" src="/public/assets/vendor/d3/d3.min.js"></script>
+        <script type="text/javascript" src="/public/assets/vendor/nvd3/build/nv.d3.min.js"></script>
+
+        <!-- Data tables -->
+        <script type="text/javascript" src="/public/assets/vendor/datatables.net/js/jquery.dataTables.min.js"></script>
+
+        <script type="text/javascript" src="/public/assets/vendor/datatables-responsive/js/dataTables.responsive.js"></script>
+
+        <!-- PNotify -->
+        <script type="text/javascript" src="/public/assets/vendor/pnotify/pnotify.custom.min.js"></script>
+
+        <!-- Fuse Html -->
+        <script type="text/javascript" src="/public/assets/vendor/fuse-html/fuse-html.min.js"></script>
+
+        <!-- Main JS -->
+        <script type="text/javascript" src="/public/assets/js/main.js"></script>
+
+        <script type="text/javascript" src="/public/assets/js/custom/User.js"></script>
+        <!-- / JAVASCRIPT -->
+<script>
+    $(document).ready(function(){
+
+        $('#loginBtn').on('click',function(){
+
+           var email =  document.getElementById('loginFormInputEmail').value;
+           var password =  document.getElementById('loginFormInputPassword').value;
+
+           document.getElementById('loginFormInputEmail_error').innerHTML = "";
+           document.getElementById('loginFormInputPassword_error').innerHTML = "";
+
+
+           if(email == ''){
+               document.getElementById('loginFormInputEmail_error').innerHTML = "email required";
+               document.getElementById('loginFormInputEmail').focus();
+               return false;
+           }else if(password == ''){
+               document.getElementById('loginFormInputPassword_error').innerHTML = "password required";
+               document.getElementById('loginFormInputPassword').focus();
+               return false;
+           }
+
+           let loginData = {
+              email: email,
+              password: password
+          }
+          User.postData('/dept/admin/tni/auth/authenticate',loginData).then(function(response){
+              if(response){
+                let userData = response.auth;
+                let auth = response.token;
+                localStorage.setItem('email', userData.email);
+                localStorage.setItem('displayName', userData.username);
+                localStorage.setItem('role', userData.userRole);
+                localStorage.setItem('token',auth.token);
+                window.location.href = '/admin/dashboard'                 
+              }
+          }).catch(function(err){ document.getElementById('login_error').innerHTML = 'email or password is incorrect'});
+        });
+
+      })
+   </script>
 
     </body>
 </html>

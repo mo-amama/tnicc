@@ -9,6 +9,7 @@ var    hostname = os.hostname();
 var path = require('path');  
 require('./db/mongoose');
 const errorHandler = require('./_helper/error-handler');
+const middleware = require('./_helper/auth-middleware'); 
 var router = express.Router();
 var path = __dirname + '/public/';
 
@@ -49,13 +50,7 @@ var port = process.env.PORT || 8081;
  app.use('/public/assets/ldn/js/', express.static(__dirname + '/public/assets/ldn/js/'));
 
 
-
-
-
-
-
-
-router.get("/",function(req,res){
+  router.get("/",function(req,res){
     res.sendFile(path + "index.html");
   });
   router.get("/admin",function(req,res){
@@ -94,14 +89,26 @@ router.get("/",function(req,res){
   router.get("/admin/payments",function(req,res){
     res.sendFile(path + "dashboard-payments.html");
   });
+  /*Transaltion routes starts */
   router.get("/admin/createtranslations",function(req,res){
     res.sendFile(path + "translations.html");
   });
-  router.get("/admin/translations",function(req,res){
-    res.sendFile(path + "viewtranslation.html");
+  router.get("/admin/translation/batch",function(req,res){
+    res.sendFile(path + "translation-wizard.html");
   });
-  router.get("/pwdreset",function(req,res){
-    res.sendFile(path + "auth-reset.html");
+   /*Transaltion routes end */
+  router.get("/pwdreset",function(req,res){ 
+    res.sendFile(path + "auth-reset-password.html");
+  }); 
+  router.get("/login",function(req,res){  
+    res.sendFile(path + "auth-login.html");
+  });
+  router.get("/register",function(req,res){
+    res.sendFile(path + "auth-register.html");
+  });
+  
+  router.get("/tni/team/link/:id",middleware.authenticateRoute,function(req,res){
+    res.sendFile(path + "auth-register.html");
   });
   router.get("/payments",function(req,res){
     res.sendFile(path + "payments.html");
@@ -111,7 +118,7 @@ router.get("/",function(req,res){
   app.use('/dept/admin/tni/distributor', require('./route/Distributor')); 
   app.use('/dept/admin/tni/user', require('./route/User')); 
   app.use('/dept/admin/tni/distributions', require('./route/Distribution')); 
-  app.use('/dept/admin/tni/team', require('./route/Team')); 
+  app.use('/dept/admin/tni/team', require('./route/Team'));
   app.use('/dept/admin/tni/language', require('./route/Language')); 
   app.use('/dept/admin/tni/download', require('./route/Download')); 
   app.use('/dept/admin/tni/translation', require('./route/Translation')); 
