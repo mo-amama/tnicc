@@ -89,9 +89,14 @@ var port = process.env.PORT || 8081;
   router.get("/admin/payments",function(req,res){
     res.sendFile(path + "dashboard-payments.html");
   });
+  /*Transaltion routes starts */
   router.get("/admin/createtranslations",function(req,res){
     res.sendFile(path + "translations.html");
   });
+  router.get("/admin/translation/batch",function(req,res){
+    res.sendFile(path + "translation-wizard.html");
+  });
+   /*Transaltion routes end */
   router.get("/pwdreset",function(req,res){ 
     res.sendFile(path + "auth-reset-password.html");
   }); 

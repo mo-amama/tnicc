@@ -43,6 +43,57 @@
         <link type="text/css" rel="stylesheet" href="/public/assets/css/main.css">
 
         <!-- / JAVASCRIPT -->
+        <style>
+        /* Style the form */
+            #regForm {
+            background-color: #ffffff;
+            margin: 100px auto;
+            padding: 40px;
+            width: 70%;
+            min-width: 300px;
+            }
+
+            /* Style the input fields */
+            input {
+            padding: 10px;
+            width: 100%;
+            font-size: 17px;
+            font-family: Raleway;
+            border: 1px solid #aaaaaa;
+            }
+
+            /* Mark input boxes that gets an error on validation: */
+            input.invalid {
+            background-color: #ffdddd;
+            }
+
+            /* Hide all steps by default: */
+            .tab {
+            display: none;
+            }
+
+            /* Make circles that indicate the steps of the form: */
+            .step {
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbbbbb;
+            border: none;
+            border-radius: 50%;
+            display: inline-block;
+            opacity: 0.5;
+            }
+
+            /* Mark the active step: */
+            .step.active {
+            opacity: 1;
+            }
+
+            /* Mark the steps that are finished and valid: */
+            .step.finish {
+            background-color: #4CAF50;
+            }
+        </style>
     </head>
 
     <body class="layout layout-vertical layout-left-navigation layout-below-toolbar">
@@ -295,6 +346,9 @@ data-page-url="">
                     <span class="h2">Rhapsody of Realities Translations</span>
                 </div>
 
+                <div>
+                     <a class="pull-right h6 text-white" href="https://firebasestorage.googleapis.com/v0/b/tnicc-412a9.appspot.com/o/translations-template.csv?alt=media&token=e9f5fb42-aafd-4efb-aa65-1834522cd961">Download Bulk Upload Template</a>
+                </div>
                 <button type="button" class="sidebar-toggle-button btn btn-icon d-block d-xl-none"
                         data-fuse-bar-toggle="dashboard-project-sidebar" aria-label="Toggle sidebar">
                     <i class="icon icon-menu"></i>
@@ -310,18 +364,25 @@ data-page-url="">
         <!-- WIDGET 4 -->
         <div class="col-lg-12 col-sm-12">
 
-            <div class="widget widget4 card">
+                <div class="widget widget4 card">
 
-                    <form class="p-8 p-sm-4">
-                        <div class="form-group">
-                      
-                            <h4 class="mt-0 ml-2 pl-2 p-5 text-secondary">Upload Translations</h4>
-                       
-                            <select class="form-control custom-select" id="language">
-                                <option selected value="">Select Language</option>
-                             </select>
+                    <form id="regForm" action="">
+
+                    <h1>Bulk Upload Translations:</h1>
+                    
+                    <!-- One "tab" for each step in the form: -->
+                    <div class="tab">CSV Template:
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input submit-button btn btn-block btn-default my-4 mx-auto" id="translationCSV" oninput="this.className = ''">
+                        <label class="custom-file-label" for="translationCSV">Choose file</label>
+                        <div class="list-group" id="translationListView">
+
                         </div>
-                         <div class="form-group">
+                      </div>
+                    </div>
+                    
+                    <div class="tab">Month & Year of Translation:
+                        <div class="form-group">
                             <select class="form-control custom-select"  id="month">
                                 <option selected value="">Select Month</option>
                                 <option value="January">January</option>
@@ -339,23 +400,40 @@ data-page-url="">
                              </select>
                          </div>
                          <div class="form-group">
-                            <input type="number" class="form-control" id="year" placeholder="Year">
+                            <input type="number" class="form-control" id="year"  oninput="this.className = ''"  placeholder="Year">
                          </div>
-                         <div class="form-group">
-                            <select class="form-control custom-select" id="docType">
-                                <option selected value="">Select Document Type</option>
-                                <option value="MP3">MP3</option>
-                                <option value="PDF">PDF</option>
-                             </select>
-                         </div>
-
-                         <div class="form-group">
-                            <label for="exampleFormControlFile1">Upload</label>
-                            <input type="file" class="form-control-file" id="rorDocs">
+                    </div>
+                    <div class="tab">Translation Documents:
+                        <div class="custom-file">
+                            <input type="file"  class="custom-file-input submit-button btn btn-block btn-default my-4 mx-auto" id="translationPDF" oninput="this.className = ''" multiple  onchange="processFiles()">
+                            <label class="custom-file-label" for="translationPDF">Choose file</label>
                           </div>
-                          <div class="form-group">
-                          <button type="button" class="btn btn-secondary  mx-sm-10 px-sm-10 " id="submitBtn">Submit</button>
-                      </form>
+
+                        <div class="list-group" id="pdfListView">
+
+                          </div>
+                    </div>
+                    <div class="tab">Summary:
+                    <p><input placeholder="Username..." oninput="this.className = ''"></p>
+                    <p><input placeholder="Password..." oninput="this.className = ''"></p>
+                    </div>
+                    
+                    <div style="overflow:auto;">
+                    <div style="float:right;">
+                        <button type="button" id="prevBtn" class="submit-button btn btn-block btn-warning my-4 mx-auto" onclick="nextPrev(-1)">Previous</button>
+                        <button type="button" id="nextBtn" class="submit-button btn btn-block btn-secondary my-4 mx-auto" onclick="nextPrev(1)">Next</button>
+                    </div>
+                    </div>
+                    
+                    <!-- Circles which indicates the steps of the form: -->
+                    <div style="text-align:center;margin-top:40px;">
+                    <span class="step"></span>
+                    <span class="step"></span>
+                    <span class="step"></span>
+                    <span class="step"></span>
+                    </div>
+                    
+                    </form>
                     </div>
 
             </div>
@@ -412,6 +490,8 @@ data-page-url="">
         <!-- Main JS -->
         <script type="text/javascript" src="/public/assets/js/main.js"></script>
         <script type="text/javascript" src="/public/assets/js/custom/Translations.js"></script>
+        <script type="text/javascript" src="/public/assets/js/shim.min.js"></script>
+         <script type="text/javascript" src="/public/assets/js/xlsx.full.min.js"></script>
 
     <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-app.js"></script> 
 <!-- Add Firebase products that you want to use -->
@@ -424,7 +504,12 @@ data-page-url="">
 <!-- The core Firebase JS SDK is always required and must be listed first -->
 
 <script>
+
 $(document).ready(function(){
+    const csvEl = document.getElementById("translationCSV");
+    csvEl.addEventListener("change", handleFiles, false);
+
+
     Languages.loadLanguages('/dept/admin/tni/language/').then(function(data){
     var ele = document.getElementById('language');
     for (var i = 0; i < data.length; i++) {
@@ -433,71 +518,6 @@ $(document).ready(function(){
             '<option value="' + data[i]['_id'] + '">' + data[i]['name'] + '</option>';
     }
    });
-    $("#submitBtn").on('click',function(){
-                // disable button
-                let self = this
-                $(self).prop("disabled", true);
-                // add spinner to button
-                $(self).html(
-                    `<i class="fa fa-spinner fa-spin fa-3x loader"></i>`
-                );
-               // let firebaseConfig = Translations.getConfigData('/firebase/config');
-                var firebaseConfig = {
-                            apiKey: "AIzaSyDEQPLbNYogRPr0G47ErxqkGP6VCMvakvI",
-                            authDomain: "tnicc-412a9.firebaseapp.com",
-                            databaseURL: "https://tnicc-412a9.firebaseio.com",
-                            projectId: "tnicc-412a9",
-                            storageBucket: "tnicc-412a9.appspot.com",
-                            messagingSenderId: "1021374360464",
-                            appId: "1:1021374360464:web:5d7f9a0230f14f1d442115",
-                            measurementId: "G-T1GRXX01CV"
-                        };
-                 firebase.initializeApp(firebaseConfig);  
-
-
-                let file = document.getElementById("rorDocs").files[0];  
-                  
-                 //   let filename = image.name
-                    const metadata = { contentType: file.type };
-                    const task = firebase.app().storage().ref('docs/'+file).put(file, metadata); 
-                    task.then(snapshot => snapshot.ref.getDownloadURL()).then(function(url) { 
-                      
-                     let upload = {
-                        language: document.getElementById("language").value,
-                        month: document.getElementById("month").value,
-                        year: document.getElementById("year").value,
-                        docType: document.getElementById("docType").value,
-                        dataURL: url
-                    }
-                    console.log('upload',JSON.stringify(upload)); 
-                     Translations.uploadTranslation('/dept/admin/tni/translation/create',upload).then(function (data){
-                        var json = JSON.stringify(data); 
-                        console.log("json",json);
-/*                         var div = document.getElementById("projectListView");  
-                        let obj = $.parseJSON(json);
-
-                        let projectTemplate = $(Project.getProjectTemplate());
-
-                        $(projectTemplate).find(".qrcodeSrc").attr("src",obj.qrCode);
-                        $(projectTemplate).find(".lead").text(obj.builder.fullname);  
-                        $(projectTemplate).find(".project_title").text(obj.title);  
-                        $(projectTemplate).find(".project_desc").text(obj.projectDescription);  
-                        $(projectTemplate).find(".project_download").attr("href",obj.source);  
-                        $(projectTemplate).find(".project_print").attr("id",obj._id);  
-
-                        $(div).append($(projectTemplate));
-
-                            $(self).prop("disabled", false);
-                            $(self).remove("i");
-                            $('#projectBackdrop').modal("hide"); */
-                        
-                    })
-                   // document.getElementById("photo").src = url; 
-                });  
-
-
-    });
-
 
 
 });
@@ -515,6 +535,264 @@ function create_UUID(){
             $("#filename").text(input.files[0].name);
         }
     }
+</script>
+<script>
+var currentTab = 0; // Current tab is set to be the first tab (0)
+showTab(currentTab); // Display the current tab
+
+function showTab(n) {
+  // This function will display the specified tab of the form ...
+  var x = document.getElementsByClassName("tab");
+  x[n].style.display = "block";
+  // ... and fix the Previous/Next buttons:
+  if (n == 0) {
+    document.getElementById("prevBtn").style.display = "none";
+  } else {
+    document.getElementById("prevBtn").style.display = "inline";
+  }
+  if (n == (x.length - 1)) {
+    document.getElementById("nextBtn").innerHTML = "Submit";
+  } else {
+    document.getElementById("nextBtn").innerHTML = "Next";
+  }
+  // ... and run a function that displays the correct step indicator:
+  fixStepIndicator(n)
+}
+
+function nextPrev(n) {
+  // This function will figure out which tab to display
+  var x = document.getElementsByClassName("tab");
+  // Exit the function if any field in the current tab is invalid:
+  if (n == 1 && !validateForm()) return false;
+  // Hide the current tab:
+  x[currentTab].style.display = "none";
+  // Increase or decrease the current tab by 1:
+  currentTab = currentTab + n;
+  // if you have reached the end of the form... :
+  if (currentTab >= x.length) {
+    //...the form gets submitted:
+    document.getElementById("regForm").submit();
+    return false;
+  }
+  // Otherwise, display the correct tab:
+  showTab(currentTab);
+}
+
+function validateForm() {
+  // This function deals with validation of the form fields
+  var x, y, i, valid = true;
+  x = document.getElementsByClassName("tab");
+  y = x[currentTab].getElementsByTagName("input");
+  // A loop that checks every input field in the current tab:
+  for (i = 0; i < y.length; i++) {
+    // If a field is empty...
+    if (y[i].value == "") {
+      // add an "invalid" class to the field:
+      y[i].className += " invalid";
+      // and set the current valid status to false:
+      valid = false;
+    }
+  }
+  // If the valid status is true, mark the step as finished and valid:
+  if (valid) {
+    document.getElementsByClassName("step")[currentTab].className += " finish";
+  }
+  return valid; // return the valid status
+}
+
+function fixStepIndicator(n) {
+  // This function removes the "active" class of all steps...
+  var i, x = document.getElementsByClassName("step");
+  for (i = 0; i < x.length; i++) {
+    x[i].className = x[i].className.replace(" active", "");
+  }
+  //... and adds the "active" class to the current step:
+  x[n].className += " active";
+}
+
+</script>
+
+<script>
+     function handlePDFFiles() { 
+        if (!this.files.length)
+          return;
+        let pdfs =   onFilePicked(this.files);
+        console.log(JSON.stringify(pdfs))
+             
+      }
+     function handleFiles() { 
+        if (!this.files.length)
+          return;
+        processExcel(this.files[0]);
+             
+
+      }
+
+     function processExcel(file) {
+        var reader = new FileReader();
+        let translationsList = [];
+        reader.onload = (e) => {
+          var data = new Uint8Array(e.target.result);
+          var workbook = XLSX.read(data, {type: 'array'});
+          var first_sheet_name = workbook.SheetNames[0];
+          var worksheet = workbook.Sheets[first_sheet_name];
+          let arrayOfRows = XLSX.utils.sheet_to_json(worksheet, {header: 1})
+          			
+
+          for(var i = 1; i<= arrayOfRows.length -1; i++) {
+            if (typeof arrayOfRows[i][0] !== 'undefined'){
+            let translationRecord = {
+                language: `${arrayOfRows[i][0]}`,
+                docType: `${arrayOfRows[i][1]}`,
+                fileName: `${arrayOfRows[i][2]}`
+            };
+            translationsList.push(translationRecord);
+            }
+          }
+        let ul = $('#translationListView');
+
+        for(var i = 0; i < translationsList.length; i++){ 
+            let listItem = $(`<a href="#" class="list-group-item list-group-item-action active download-link">
+                                <div class="d-flex w-100 justify-content-between">
+                                    <h5 class="mb-1 language"></h5>
+                                    <small class="doc-type"></small>
+                                </div>
+                                <small class="file"></small>
+                                </a>`);
+                $(listItem).find(".language").text(translationsList[i].language);
+                $(listItem).find(".doc-type").text(translationsList[i].docType);
+                $(listItem).find(".file").text(translationsList[i].fileName);
+
+                $(ul).append($(listItem));
+           }         
+        };
+        reader.readAsArrayBuffer(file);
+
+        Translations.setTranslations(translationsList);
+      }
+      function processPDF(file) {
+        var reader = new FileReader();
+        let translationsList = [];
+        reader.onload = (e) => {
+          var data = new Uint8Array(e.target.result);
+          var workbook = XLSX.read(data, {type: 'array'});
+          var first_sheet_name = workbook.SheetNames[0];
+          var worksheet = workbook.Sheets[first_sheet_name];
+          let arrayOfRows = XLSX.utils.sheet_to_json(worksheet, {header: 1})
+          			
+
+          for(var i = 1; i<= arrayOfRows.length -1; i++) {
+            if (typeof arrayOfRows[i][0] !== 'undefined'){
+            let translationRecord = {
+                language: `${arrayOfRows[i][0]}`,
+                docType: `${arrayOfRows[i][1]}`,
+                fileName: `${arrayOfRows[i][2]}`
+            };
+            translationsList.push(translationRecord);
+            }
+          }
+        let ul = $('#translationListView');
+
+        for(var i = 0; i < translationsList.length; i++){ 
+            let listItem = $(`<a href="#" class="list-group-item list-group-item-action active download-link">
+                                <div class="d-flex w-100 justify-content-between">
+                                    <h5 class="mb-1 language"></h5>
+                                    <small class="doc-type"></small>
+                                </div>
+                                <small class="file"></small>
+                                </a>`);
+                $(listItem).find(".language").text(translationsList[i].language);
+                $(listItem).find(".doc-type").text(translationsList[i].docType);
+                $(listItem).find(".file").text(translationsList[i].fileName);
+
+                $(ul).append($(listItem));
+           }         
+        };
+        reader.readAsArrayBuffer(file);
+
+        return translationsList;
+      }
+      let translationPDFList =  [];
+
+      function processFiles()
+        {
+            var firebaseConfig = {
+                            apiKey: "AIzaSyDEQPLbNYogRPr0G47ErxqkGP6VCMvakvI",
+                            authDomain: "tnicc-412a9.firebaseapp.com",
+                            databaseURL: "https://tnicc-412a9.firebaseio.com",
+                            projectId: "tnicc-412a9",
+                            storageBucket: "tnicc-412a9.appspot.com",
+                            messagingSenderId: "1021374360464",
+                            appId: "1:1021374360464:web:5d7f9a0230f14f1d442115",
+                            measurementId: "G-T1GRXX01CV"
+                        };
+                 firebase.initializeApp(firebaseConfig);  
+
+            var filelist = document.getElementById('translationPDF').files;
+            for(var i=0; i<filelist.length; i++)
+
+            {
+
+                writefiles(filelist[i]);
+
+            }
+
+        }
+
+
+
+    function writefiles(file)
+
+    {
+
+        var reader = new FileReader();
+
+        reader.onload = function()
+
+        {
+           // translationPDFList.push({name:file.name,file:reader.result});
+          //  console.log(file.name);
+          // document.getElementById('output').innerText += reader.result;
+
+
+                  
+                 //   let filename = image.name 
+                    const metadata = { contentType: file.type };
+                    console.log('translations[i].fileName',file.name );
+                    const task = firebase.app().storage().ref('docs/'+file.name).put(file, metadata); 
+                    task.then(snapshot => snapshot.ref.getDownloadURL()).then(function(url) { 
+                      let translations = Translations.getTranslations();
+                      console.log('translations',JSON.stringify(translations))
+                      for(var i = 0; i < translations.length; i++){
+
+                        console.log('translations[i].fileName',translations[i].fileName );
+                        
+                        if(translations[i].fileName == file.name){
+                            let upload = {
+                                language: translations[i].language,
+                                month: document.getElementById("month").value,
+                                year: document.getElementById("year").value,
+                                docType: translations[i].docType,
+                                dataURL: url
+                                }
+                            Translations.uploadTranslation('/dept/admin/tni/translation/create',upload).then(function (data){
+                                var json = JSON.stringify(data); 
+                                console.log("json",json);
+                            })
+                        }
+                         
+                      }
+
+                   // document.getElementById("photo").src = url; 
+                });  
+
+
+        }
+
+        reader.readAsDataURL(file);
+
+    }
+
 </script>
 </body>
 </html>

@@ -1,17 +1,23 @@
 var Translations = (function() {
     'use strict';
     var _template = `<tr>
-    <td class="count"></td>
-    <td class="language"></td>
-    <td class="month"></td>
-    <td class="year"></td>
-    <td class="type"></td>
-    <td class="url"></td>
-    <td class="dateCreated"></td>
-  </tr>`;
-
+                    <td class="count"></td>
+                    <td class="language"></td>
+                    <td class="month"></td>
+                    <td class="year"></td>
+                    <td class="type"></td>
+                    <td class="url"></td>
+                    <td class="dateCreated"></td>
+                  </tr>`;
+    var _translations = [];
   
     return {
+      getTranslations: function () {
+        return _translations;
+      },
+      setTranslations: function (data) {
+        _translations = data;
+      },
       getTamplate(){
         return _template;
       },
